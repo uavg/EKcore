@@ -1,0 +1,22 @@
+﻿## Interface: 70000
+## Title: |cff00ffffEK|rcore
+
+#占用65kb
+
+#詞綴替換@freeui
+globalstrings.lua
+#天賦巨集(#tier_6)-換天賦自動變按鍵
+infMopTalentMacros.lua
+#冷卻計時
+OmniCC.lua
+#距離染紅
+RedRange.lua
+#bigwig預設配置
+SetBW.lua
+#聊天框架定位@monoui
+Setchat.lua
+#一些初始設定@樓上的你媽媽叫你吃飯
+Setui.lua
+#快速指令@monoui
+Tweaks.lua
+
