@@ -1,7 +1,7 @@
 ﻿## Interface: 70000
 ## Title: |cff00ffffEK|rcore
 
-#占用65kb
+#占用75kb
 
 #詞綴替換@freeui
 globalstrings.lua

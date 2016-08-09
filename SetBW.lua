@@ -22,17 +22,16 @@ end)]]--
 local SetBW = function()
 if(BigWigs3DB) then table.wipe(BigWigs3DB) end
 	BigWigs3DB = {
-	["has61reset"] = true, --6.1的重置設定
 	["namespaces"] = {
-		["BigWigs_Plugins_Victory"] = {
+		["BigWigs_Plugins_Victory"] = {  --勝利
 			["profiles"] = {
 				["Default"] = {
-					["soundName"] = "None",  --勝利音效
+					["soundName"] = "None",  --不播放勝利音效
 					["blizzMsg"] = false, --不顯示暴雪擊敗動畫
 				},
 			},
 		},
-	    ["BigWigs_Plugins_Bars"] = {
+	    ["BigWigs_Plugins_Bars"] = {  --計時條
 		    ["profiles"] = {
 				["Default"] = {
 					["BigWigsEmphasizeAnchor_x"] = 825,  --大型計時條x座標
@@ -44,13 +43,14 @@ if(BigWigs3DB) then table.wipe(BigWigs3DB) end
 					["BigWigsAnchor_y"] = 610, --小型計時條y座標
 					["BigWigsAnchor_width"] = 160, --小型計時條長度
 					["growup"] = false, --小型計時條向上成長
+					
 					["fontSize"] = 12, --字體大小
 					["barStyle"] = "RealUI", --計時條風格
 					["outline"] = "OUTLINE", --字體描邊
 					["font"] = "預設",
 
 					["emphasizeScale"] = 1.4,  --大型計時條縮放
-					["interceptMouse"] = true, --滑鼠點擊
+					--["interceptMouse"] = true, --滑鼠點擊
 					},
 				},
 			},
@@ -62,7 +62,7 @@ if(BigWigs3DB) then table.wipe(BigWigs3DB) end
 				},
 			},
 		},
-	    ["BigWigs_Plugins_BossBlock"] = {
+	    ["BigWigs_Plugins_BossBlock"] = {  --首領戰訊息封鎖
 		    ["profiles"] = {
 			    ["Default"] = {
 				    ["blockEmotes"] = false,  --不禁用暴雪首領表情
@@ -102,55 +102,30 @@ if(BigWigs3DB) then table.wipe(BigWigs3DB) end
 					},
 				},
 			},			
-		["BigWigs_Plugins_Alt Power"] = {
+		["BigWigs_Plugins_Alt Power"] = {  --特殊能量
 			["profiles"] = {
 				["Default"] = {
 					["posx"] = 388,
-					["fontSize"] = 15,
+					["fontSize"] = 16,
 					["font"] = "預設",
 					["posy"] = 735,
 					["fontOutline"] = "OUTLINE",
 				},
 			},
 		},
-		["BigWigs_Plugins_Common Auras"] = {
+		["BigWigs_Plugins_Statistics"] = {  --統計
 			["profiles"] = {
 				["Default"] = {
-					[47788] = 1,
-					[76577] = 1,
-					[108199] = 1,
-					[102342] = 1,
-					[98008] = 1,
-					[698] = 3,
-					[114039] = 1,
-					[2825] = 1,
-					[115310] = 1,
-					[97462] = 1,
-					[64843] = 1,
-					[31821] = 1,
-					[106898] = 1,
-					["portal"] = 3,
-					[33206] = 1,
-					[116849] = 1,
-					[114030] = 1,
-					[62618] = 1,
-					["repair"] = 3,
-					[29893] = 3,
-					[43987] = 3,
-					["feast"] = 3,
-					[740] = 1,
-					[6940] = 1,
-					[108280] = 1,
-					[114192] = 1,
-					[51052] = 1,
+					["printNewBestKill"] = false,
+					["saveBestKill"] = false,
 				},
 			},
-			["reset"] = true,
 		},
 	},
 	["profiles"] = {
 		["Default"] = {
 			["raidicon"] = false,  --禁用自動標記
+			["showZoneMessages"] = false,  --關閉區域訊息
 			["fakeDBMVersion"] = true,  --假裝我是dbm
 		},
 	},
