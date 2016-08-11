@@ -1,0 +1,14 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="AchievementSS.lua"/>	
+	<Script file="CinematicSkip.lua"/>	
+	<Script file="EventBossAutoSelect.lua"/>	
+	<Script file="FakeAchievement.lua"/>
+	<Script file="FollowerClick.lua"/>	
+	<Script file="ObjectiveTrackerForModernists.lua"/>	
+	<Script file="PostmasterGeneral.lua"/>	
+	<Script file="Raidmanager.lua"/>	
+	<Script file="rVignette.lua"/>
+	<Script file="ShiftRight.lua"/>	
+</Ui>
+
+

@@ -1,0 +1,32 @@
+﻿## Interface: 70000
+## Title: |cff00ffffEmini|rComabt
+
+
+#Combat-戰鬥
+#這11個插件最低占用約85kb常態在125kb
+
+#打斷冷卻
+alInterruptCD.lua
+#團隊技能冷卻計時@allez
+alRaidCD.lua
+
+#嘲諷提示
+#aunty.lua
+#被戰復提示
+BattleResAlert.lua
+#戰鬥警示
+CombatAlert.lua
+#自動戰鬥紀錄
+EasyLogger.lua
+#低血量警報
+HealthWarning.lua
+#打斷通報
+Krys_Interrupt!.lua
+#進入戰鬥警示
+BabyMurlocA.ogg.lua
+#群復通報
+#SayMassRez.lua
+#悶棍通報
+SaySapped.lua
+#法術cd提示
+#SpellNotReadyYet.lua

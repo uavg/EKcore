@@ -2,18 +2,24 @@
 WorldMapPlayerUpper:EnableMouse(false)
 WorldMapPlayerLower:EnableMouse(false)
 
---- 任務字體放大: 標題/描述/目標/內容
-QuestTitleFont:SetFont("Fonts\\bLEI00D.TTF", 18)
-QuestFont:SetFont("Fonts\\bLEI00D.TTF", 18)
-QuestFontNormalSmall:SetFont("Fonts\\bLEI00D.TTF", 18)
-QuestFontHighlight:SetFont("Fonts\\bLEI00D.TTF", 18)
+-- 反向清理背包
+SetSortBagsRightToLeft(true)
+
+--禁用""將戰利品方在最左邊""
+--SetInsertItemsLeftToRight(false)
+
+-- 任務字體放大: 標題/描述/目標/內容
+QuestTitleFont:SetFont(STANDARD_TEXT_FONT, 18)
+QuestFont:SetFont(STANDARD_TEXT_FONT, 18)
+QuestFontNormalSmall:SetFont(STANDARD_TEXT_FONT, 18)
+QuestFontHighlight:SetFont(STANDARD_TEXT_FONT, 18)
 
 -- 過濾未學會的
 --C_ToyBox.SetUncollectedShown(false)
 --C_MountJournal.SetCollectedFilterSetting(2)
 --C_PetJournal.SetFilterChecked(2)
 --C_Heirloom.GetUncollectedHeirloomFilter(2)
---C_TransmogCollection.GetUncollectedShown(false)
+--C_TransmogCollection.SetUncollectedShown(false)
 
 -- 過濾密語時的忙碌或暫離回復
 --ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", function(msg) return true end)
@@ -31,6 +37,8 @@ SlashCmdList["RELOADUI"] = function() ReloadUI() end
 SLASH_RELOADUI1 = "/rl"
 
 -- 一鍵切天賦 
+-- 其實不太需要了，除非把專精順序都背起來
+-- 或者用GetSpecializationInfo() print出來第二個值是專精名字
 SlashCmdList["S1"] = function() SetSpecialization(1) print("切換第一專精...") end
 SLASH_S11 = "/s1"
 SlashCmdList["S2"] = function() SetSpecialization(2) print("切換第二專精...") end
@@ -134,7 +142,7 @@ SlashCmdList["GROUPDISBAND"] = function()
 end
 SLASH_GROUPDISBAND1 = "/rd"
 
---  五人副本模式切換 
+-- 五人副本模式切換 
 SlashCmdList["DGFIVE"] = function() SetDungeonDifficultyID(1) end
 SLASH_DGFIVE1 = "/5n"
 SlashCmdList["DGHERO"] = function() SetDungeonDifficultyID(2) end
@@ -142,7 +150,8 @@ SLASH_DGHERO1 = "/5h"
 SlashCmdList["DGMYTH"] = function() SetDungeonDifficultyID(23) end
 SLASH_DGCHAL1 = "/5m"
 
---  舊團隊副本模式切換 
+-- 舊團隊副本模式切換 
+-- 存在問題
 SlashCmdList["RAIDTENMAN"] = function() SetRaidDifficultyID(3) end
 SLASH_RAIDTENMAN1 = "/10n"
 SlashCmdList["RAIDTENHERO"] = function() SetRaidDifficultyID(5) end
@@ -152,7 +161,7 @@ SLASH_RAIDTFMAN1 = "/25n"
 SlashCmdList["RAIDTFHERO"] = function() SetRaidDifficultyID(6) end
 SLASH_RAIDTFHERO1 = "/25h"
 
---  團隊副本模式切換
+-- 團隊副本模式切換
 SlashCmdList["FLEXNORMAL"] = function() SetRaidDifficultyID(14) end
 SLASH_FLEXNORMAL1 = "/nm"
 SlashCmdList["FLEXHERO"] = function() SetRaidDifficultyID(15) end

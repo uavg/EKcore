@@ -1,0 +1,37 @@
+----[[ 每周每日 ]]----
+SlashCmdList['QC'] = function()
+    print("|cff00ffff世界首領|r")
+	print(IsQuestFlaggedCompleted(32099) and '恐懼之煞：|cff00BE02已擊殺|r' or '恐懼之煞：|cffDC0300未擊殺|r')
+	print(IsQuestFlaggedCompleted(32098) and '帆船：|cff00BE02已擊殺|r' or '帆船：|cffDC0300未擊殺|r')
+	print(IsQuestFlaggedCompleted(32519) and '烏達斯塔：|cff00BE02已擊殺|r' or '烏達斯塔：|cffDC0300未擊殺|r')
+	print(IsQuestFlaggedCompleted(32518) and '納拉卡：|cff00BE02已擊殺|r' or '納拉卡：|cffDC0300未擊殺|r')
+	--print(IsQuestFlaggedCompleted(33117) and '聖獸天尊：|cff00BE02已擊殺|r' or '聖獸天尊：|cffDC0300未擊殺|r')
+	--print(IsQuestFlaggedCompleted(33118) and '火神歐朵斯：|cff00BE02已擊殺|r' or '火神歐朵斯：|cffDC0300未擊殺|r')
+	--print(IsQuestFlaggedCompleted(37460) and '德羅夫：|cff00BE02已擊殺|r' or '火神歐朵斯：|cffDC0300未擊殺|r')
+	--print(IsQuestFlaggedCompleted(37462) and '塔爾納：|cff00BE02已擊殺|r' or '火神歐朵斯：|cffDC0300未擊殺|r')
+	--print(IsQuestFlaggedCompleted(37464) and '魯克馬爾：|cff00BE02已擊殺|r' or '火神歐朵斯：|cffDC0300未擊殺|r')
+	print("|cff00ffff本周任務|r")
+	print(IsQuestFlaggedCompleted(32611) and '白骨之廷咒卷：|cff00BE02已拾取|r' or '白骨之廷咒卷：|cffDC0300未拾取|r')
+	print(IsQuestFlaggedCompleted(32609) and '黃金寶箱：|cff00BE02已拾取|r' or '黃金寶箱：|cffDC0300未拾取|r')
+	print(IsQuestFlaggedCompleted(32626) and '雷神皇宮鑰匙：|cff00BE02已拾取|r' or '雷神皇宮鑰匙：|cffDC0300未拾取|r')
+	print(IsQuestFlaggedCompleted(32610) and '稀有怪衫織儀式石：|cff00BE02已拾取 ' or '稀有怪衫織儀式石：|cffDC0300未拾取|r')
+	print(IsQuestFlaggedCompleted(32505) and '崩壞的司庫：|cff00BE02已解|r' or '崩壞的司庫：|cffDC0300未解|r')
+	print(IsQuestFlaggedCompleted(32640) and '雷王的勇士(聯盟)：|cff00BE02已解|r' or '雷王的勇士：|cffDC0300未解|r')
+	print(IsQuestFlaggedCompleted(32641) and '雷王的勇士(部落)：|cff00BE02已解|r' or '雷王的勇士：|cffDC0300未解|r')
+	print(IsQuestFlaggedCompleted(32969) and '閃閃發光的寶箱(跳柱子)：|cff00BE02已拾取|r' or '閃閃發光的寶箱(跳柱子)：|cffDC0300未拾取|r')
+	print(IsQuestFlaggedCompleted(32968) and '走繩索的寶箱：|cff00BE02已拾取|r' or '走繩索的寶箱：|cffDC0300未拾取|r')
+	print(IsQuestFlaggedCompleted(32971) and '霧氣繚繞的寶箱(飄浮拿次級)：|cff00BE02已拾取|r' or '霧氣繚繞的寶箱(飄浮拿次級)：|cffDC0300未拾取|r')
+	print(IsQuestFlaggedCompleted(32957) and '沉沒的寶箱(打怪拿鑰匙)：|cff00BE02已拾取|r' or '沉沒的寶箱(打怪拿鑰匙)：|cffDC0300未拾取|r')
+	print(IsQuestFlaggedCompleted(32956) and '無賴的海灘貨物(洞穴入口)：|cff00BE02已拾取|r' or '無賴的海灘貨物(洞穴入口)：|cffDC0300未拾取|r')
+	print(IsQuestFlaggedCompleted(32970) and '閃閃發光的寶物袋(船桅上的寶藏)：|cff00BE02已拾取|r' or '閃閃發光的寶物袋(船桅上的寶藏)：|cffDC0300未拾取|r')
+	print(IsQuestFlaggedCompleted(33334) and '因強而生(紀元之石)：|cff00BE02已解|r' or '因強而生(紀元之石)：|cffDC0300未解|r')
+	print(IsQuestFlaggedCompleted(33338) and '沙漏充能(五隻稀有)：|cff00BE02已解|r' or '沙漏充能(五隻稀有)：|cffDC0300未解|r')	
+	print("|cff00ffff本日任務|r")
+	print(IsQuestFlaggedCompleted(31337) and '糯米：|cff00BE02已解|r' or '糯米：|cffDC0300未解|r')
+	print(IsQuestFlaggedCompleted(31752) and '布靈登4000：|cff00BE02已解|r' or '布靈登4000：|cffDC0300未解|r')
+	print(IsQuestFlaggedCompleted(34774) and '布靈登5000：|cff00BE02已解|r' or '布靈登4000：|cffDC0300未解|r')
+
+end
+SLASH_QC1 = '/QC'
+SLASH_QC2 = '/qc'
+

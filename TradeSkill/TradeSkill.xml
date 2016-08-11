@@ -1,0 +1,9 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="AuctionCancel.lua"/>	
+	<Script file="AuctionPlus.lua"/>	
+	<Script file="OneClickBuyOut_BrowseButton.lua"/>
+	<Script file="OneClickBuyOut.lua"/>	
+	<Script file="OneClickEnchantScroll.lua"/>	
+	<Script file="TrainAll.lua"/>
+</Ui>
+

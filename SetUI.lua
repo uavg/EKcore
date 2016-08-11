@@ -4,7 +4,7 @@ local UIcfg = function()
 --以下這些設置的巨集應用為 /run SetCVar("cvar", "值") 或/console cvar 值
 
 --[[ 系統 ]]
-   --啟用UI縮放
+   --啟用UI縮放，0關
    SetCVar("useUiScale", 0)
    --若上項設為1則此處設置縮放比
    --SetCVar("uiScale", 0.8)
@@ -14,27 +14,42 @@ local UIcfg = function()
    SetCVar("screenshotQuality", 10)
    --#截圖格式
    --SetCVar("screenshotFormat", "tga")
-   --反和諧
+   --#反和諧
    --SetCVar("overrideArchive", 0)
-   --#顯示LUA錯誤
+   --#顯示LUA錯誤，0關
    SetCVar("scriptErrors", 1)                   
    --#浮動戰鬥文字逗點 1是有逗點
    SetCVar("breakUpLargeNumbers", 0) 
    --#顯示公會離線成員，0關
    SetCVar("guildShowOffline", 0) 
-   --#裝備對比   
+   --#*裝備對比，0關
    SetCVar("alwaysCompareItems", 0) 
-   --#顯示經驗值數值
+   --#顯示經驗值數值，1開
    SetCVar("xpBarText", 1)
-   --#進階提示
+   --#*進階提示，1開
    SetCVar("UberTooltips", 1)
    --#使用進階marco，其實無法寫入插件裡
    --SetCVar("AllowDangerousScripts", 1)
+   --#顯示所有的增益效果而非只顯示自己的，1開 
+   SetCVar("noBuffDebuffFilterOnTarget", 1) 
+   --#移動時大地圖半透明，1開 
+   SetCVar("mapFade", 1)
+   --#全螢幕泛光
+   SetCVar("ffxGlow", 0)
+   --#仇恨百分比
+   --SetCVar("threatShowNumeric", 1)
+   --#自動追蹤任務，0關
+   --SetCVar("autoQuestWatch", 0)
+   --#顯示背包剩餘空間，0關
+   --SetCVar("displayFreeBagSlots", 0)
+   --隱藏個人資源上醜陋的使用閃光動畫效果
+   --SetCVar("showSpenderFeedback", 0)
+   --不顯示即將到來的治療
+   --SetCVar("predictedHealth", 0)
 
 --[[ 其他待確認 ]]
    --SetCVar("autoQuestWatch", 1)
    --SetCVar("autoQuestProgress", 1)
-   --SetCVar("UberTooltips", 1)
    --SetCVar("removeChatDelay", 0)
    
    --SetCVar("petStatusText", 0)
@@ -89,7 +104,6 @@ local UIcfg = function()
 	--團隊醒目標示，圓圈和外框
 	SetCVar("findYourselfMode", 1)
 	--狀態文字 "NUMERIC", "PERCENT" or "BOTH"
-	SetCVar("statusText", 1)
 	SetCVar("statusTextDisplay","BOTH") 
     --對話泡泡	
 	--旋轉小地圖，0關
@@ -100,6 +114,9 @@ local UIcfg = function()
 	SetCVar("showTutorials", 0)
 	--#新內容(這並沒有什麼鳥用)
 	SetCVar("showNPETutorials", 0)
+	
+	--#只在滑鼠移過時顯示數字
+	--SetCVar("statusText", 0)
 --社交
    --不當言詞過濾器，0關
    SetCVar("profanityFilter", 0)
@@ -150,10 +167,15 @@ local UIcfg = function()
    --冷卻計時，0關
    SetCVar("countdownForCooldowns", 0)
 
-   --#自定延遲值 原reducedLagTolerance不起作用似乎有一個新的cvar但沒感覺到有什麼用
-   --SetCVar("maxSpellStartRecoveryOffset", 0)
-   --#按下按鍵時施放技能
-   SetCVar("ActionButtonUseKeyDown", 1) 
+   --#技能隊列，開了才能用自定延遲
+   --SetCVar("reducedLagTolerance", 1)
+   --#自定延遲值
+   --SetCVar("maxSpellStartRecoveryOffset", 100)
+   --#按下按鍵時施放技能，1開
+   SetCVar("ActionButtonUseKeyDown", 1)
+   --#切換技能時觸發保險，1開
+   --SetCVar("secureAbilityToggle", 1) 
+   
    
 --[[ 名稱 ]]
    --*我的名稱
@@ -185,6 +207,8 @@ local UIcfg = function()
 
    --#公會頭銜
    SetCVar("UnitNameGuildTitle", 0)
+   --#公會名稱，1開
+   --SetCVar("UnitNamePlayerGuild", 1)
    --#姓名板職業顏色
    SetCVar("ShowClassColorInNameplate", 1) 
    
@@ -214,15 +238,25 @@ local UIcfg = function()
    SetCVar("nameplateShowEnemyTotems", 1)
    --*敵方單位(v) -次要
    SetCVar("nameplateShowEnemyMinus", 1)
+   
    --#顯示名條的最遠距離，legion默認是60，以前是40
    SetCVar("nameplateMaxDistance", 40)
+   --#不讓距離內螢幕外的名條貼邊 
+   --SetCVar("nameplateOtherTopInset", -1) 
+   --SetCVar("nameplateOtherBottomInset", -1)
+   --回到預設(0.8,1) 使用巨集
+   --/run for _, v in pairs({"nameplateOtherTopInset", "nameplateOtherBottomInset"}) do SetCVar(v, GetCVarDefault(v)) end
+
 
 --[[ 鏡頭 ]]
    --水體碰撞
-   --最遠距離，最大1.9
-   SetCVar("CameraDistanceMaxFactor", 1.9)
+   --最遠距離，最大3.8
+   SetCVar("CameraDistanceMaxFactor", 3.8)
    --鏡頭跟隨模式，0-永不調整，可選0,1,2,3,4--(1是只調整水平面)
    SetCVar("cameraSmoothStyle", 0)
+   
+   --#當鏡頭在地上時讓你自由旋轉視角，0關
+   --SetCVar("cameraPivot", 0)
    
 --[[ 滑鼠 ]]
 
@@ -246,53 +280,52 @@ local UIcfg = function()
    SetCVar("raidFramesWidth", 84)]]--
 
 --[[ 浮動戰鬥文字 ]]
-   --[[
+
    --*浮動戰鬥文字的運動方式，1往上2往下3弧形
-   SetCVar("floatingCombatTextFloatMode", 1)
+   --SetCVar("floatingCombatTextFloatMode", 1)
    --使用這項，浮動戰鬥文字就會垂直往上，如同過去
    SetCVar("floatingCombatTextCombatDamageDirectionalScale", 0)
    --對目標傷害
-   SetCVar("floatingCombatTextCombatDamage", 0)  
+   --SetCVar("floatingCombatTextCombatDamage", 0)  
    --對目標治療
-   SetCVar("floatingCombatTextCombatHealing", 0) 
+   --SetCVar("floatingCombatTextCombatHealing", 0) 
 
    --寵物對目標傷害
-   SetCVar("floatingCombatTextPetMeleeDamage"", 0)
-   SetCVar("floatingCombatTextPetSpellDamage", 0)
+   --SetCVar("floatingCombatTextPetMeleeDamage"", 0)
+   --SetCVar("floatingCombatTextPetSpellDamage", 0)
    --對目標上盾
-   SetCVar("floatingCombatTextCombatHealingAbsorbTarget", 0)
+   --SetCVar("floatingCombatTextCombatHealingAbsorbTarget", 0)
    --得盾/護甲提示
-   SetCVar("floatingCombatTextCombatHealingAbsorbSelf", 0)
+   --SetCVar("floatingCombatTextCombatHealingAbsorbSelf", 0)
 
    --*閃招
-   SetCVar("floatingCombatTextDodgeParryMiss", 0)
+   --SetCVar("floatingCombatTextDodgeParryMiss", 0)
    --*傷害減免   
-   SetCVar("floatingCombatTextDamageReduction", 0)
+   --SetCVar("floatingCombatTextDamageReduction", 0)
    --周期性傷害
-   SetCVar("floatingCombatTextCombatLogPeriodicSpells", 0)
+   --SetCVar("floatingCombatTextCombatLogPeriodicSpells", 0)
    --*法術警示
-   SetCVar("floatingCombatTextReactives", 1)
+   --SetCVar("floatingCombatTextReactives", 1)
    --他人的控場效果(例如 誘補(xxxx-xxxx))
-   SetCVar("floatingCombatTextSpellMechanics", 1)
+   --SetCVar("floatingCombatTextSpellMechanics", 1)
    --*聲望變化
-   SetCVar("floatingCombatTextRepChanges", 0)
+   --SetCVar("floatingCombatTextRepChanges", 0)
    --*友方治療者名稱
-   SetCVar("floatingCombatTextFriendlyHealers", 0)
+   --SetCVar("floatingCombatTextFriendlyHealers", 0)
    --*進入離開戰鬥
-   SetCVar("floatingCombatTextCombatState", 0)
+   --SetCVar("floatingCombatTextCombatState", 0)
    --*低MP/低HP，預設1開
-   SetCVar("floatingCombatTextLowManaHealth", 0)  
+   --SetCVar("floatingCombatTextLowManaHealth", 0)  
    --*連擊點
-   SetCVar("floatingCombatTextComboPoints", 0)
+   --SetCVar("floatingCombatTextComboPoints", 0)
    --*能量獲得
-   SetCVar("floatingCombatTextEnergyGains", 0)
+   --SetCVar("floatingCombatTextEnergyGains", 0)
    --*周期性能量   
-   SetCVar("floatingCombatTextPeriodicEnergyGains", 0)
+   --SetCVar("floatingCombatTextPeriodicEnergyGains", 0)
    --*榮譽擊殺
-   SetCVar("floatingCombatTextHonorGains", 0)
+   --SetCVar("floatingCombatTextHonorGains", 0)
    --*光環
-   SetCVar("floatingCombatTextAuras", 0)
-   ]]--  
+   --SetCVar("floatingCombatTextAuras", 0)
 
 --[[ 頻道設定 ]]
 	--重置
@@ -440,7 +473,7 @@ local f = CreateFrame("Frame")
 f:RegisterEvent("PLAYER_LOGIN")
 f:SetScript("OnEvent", function(self, event)
     if event == "PLAYER_LOGIN" then
-	        print("|cff00ffffEKE|rmini:V6.1.20160722，輸入/uihelp查看指令，/qc查看每日每周任務")
+	        print("|cff00ffffEKE|rmini:V7.0.20160809，輸入/uihelp查看指令，/qc查看每日每周任務")
     end
 end)
 
