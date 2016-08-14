@@ -5,11 +5,13 @@
 	<Script file="FastError.lua"/>	
 	<Script file="FriendColor.lua"/>
 	<Script file="GuildIcons.lua"/>
+	<Script file="HideTalkingHead.lua"/>
 	<Script file="ImprovedLootFrame.lua"/>
 	<Script file="ImprovedOptionsFrames.lua"/>
 	<Script file="ImprovedStableFrame.lua"/>	
 	<Script file="MailinputboxResizer.lua"/>
 	<Script file="MerchantFilterButtons.lua"/>
+	<Script file="OrderHallIcon.lua"/>
 	<Script file="PokeBandage.lua"/>
 	<Script file="RollHistory.lua"/>	
 	<Script file="WordMapPlayerDotResizer.lua"/>
