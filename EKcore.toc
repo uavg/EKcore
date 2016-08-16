@@ -9,6 +9,8 @@ DragEmAll.lua
 Globalstrings.lua
 #天賦巨集(#tier_6)-換天賦自動變按鍵
 infMopTalentMacros.lua
+#按鍵綁定
+ncHoverBind.lua
 #冷卻計時
 OmniCC.lua
 #一鍵收信
@@ -16,17 +18,19 @@ OpenAll.lua
 #查看每日(mop)
 #QuestCheck.lua
 #距離染紅
-RedRange.lua
+tullaRange.lua
 #bigwig預設
 SetBW.lua
 #聊天框架定位@monoui
 Setchat.lua
 #DBM預設
 SetDBM.lua
-#一些初始設定@樓上的你媽媽叫你吃飯
+#CVAR@樓上的你媽媽叫你吃飯
 Setui.lua
 #游標閃光@Dayn
 SnowfallCursor.lua
+#加快藍條
+SpeedyLoad.lua
 #快速指令@monoui
 Tweaks.lua
 

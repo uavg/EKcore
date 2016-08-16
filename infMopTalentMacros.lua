@@ -2,14 +2,21 @@
 -- infMopTalentMacros
 ----------------------------------------------
 
+local EditMacro = EditMacro
+local GetSpellInfo = GetSpellInfo
+local GetTalentInfo = GetTalentInfo
+
 local function OnEvent(self, event, ...)
 	if InCombatLockdown() then return end
-	local spec = GetActiveSpecGroup()
 	for t=1, 7 do --tier
 		for c=1, 3 do --column
-			local _, name, _, selected = GetTalentInfo(t, c, spec)
+			local _, name, texture, selected = GetTalentInfo(t, c, 1)
+			local icon = "INV_Misc_QuestionMark"
+			if texture and not GetSpellInfo(name) then
+				icon = texture:lower():gsub("interface\\icons\\", "")
+			end
 			if selected then
-				EditMacro("TIER_"..t, nil, "INV_Misc_QuestionMark", "#showtooltip\n/cast "..name)
+				EditMacro("TIER_"..t, nil, icon, "#showtooltip\n/cast "..name)
 			end
 		end
 	end

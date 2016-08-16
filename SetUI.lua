@@ -40,10 +40,7 @@ local UIcfg = function()
 
 --[[ 其他待確認 ]]
 
-	--SetCVar("autoQuestWatch", 1)
-	--SetCVar("autoQuestProgress", 1)
-	--SetCVar("removeChatDelay", 0)
-	
+	--SetCVar("removeChatDelay", 0)	
 	--SetCVar("petStatusText", 0)
 	--SetCVar("partyStatusText", 0)
 	--SetCVar("targetStatusText", 1)
@@ -216,14 +213,8 @@ local UIcfg = function()
 	
 --[[ 快捷列 ]]
 
-	--左下方 這些是無效的 暴雪不讓你這麼做
-	--SetCVar("bottomLeftActionBar", 1) 
-	--右下方
-	--SetCVar("bottomRightActionBar", 1) 
-	--右方
-	--SetCVar("rightActionBar", 1) 
-	--右方2
-	--SetCVar("rightTwoActionBar", 1) 
+	--啟用快捷列	
+
 	--*鎖定，1開
 	SetCVar("lockActionBars", 1) 
 	--拖曳快捷鍵
@@ -489,7 +480,7 @@ local UIcfg = function()
 end
 
 StaticPopupDialogs.SET_UI = {
-		text = "載入預設的介面設定，查看Emini/Setui",
+		text = "載入預設的介面設定，查看EKcore/Setui",
 		button1 = ACCEPT,
 		button2 = CANCEL,
 		OnAccept =  function() UIcfg() ReloadUI() end,

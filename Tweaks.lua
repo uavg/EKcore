@@ -2,12 +2,20 @@
 WorldMapPlayerUpper:EnableMouse(false)
 WorldMapPlayerLower:EnableMouse(false)
 
+-- 自動啟用快捷列(只在登入時生效)
+SetActionBarToggles(1, 1, 1, 1)
+
 -- 反向清理背包
 SetSortBagsRightToLeft(true)
 
---禁用""將戰利品方在最左邊""
+--禁用"將戰利品方在最左邊"
 --SetInsertItemsLeftToRight(false)
 
+-- 脫戰後釋放記憶體
+--local F = CreateFrame("Frame") 
+--F:RegisterEvent("PLAYER_REGEN_ENABLED") 
+--F:SetScript("OnEvent", function() _G.collectgarbage("collect") end)
+   
 -- 任務字體放大: 標題/描述/目標/內容
 QuestTitleFont:SetFont(STANDARD_TEXT_FONT, 18)
 QuestFont:SetFont(STANDARD_TEXT_FONT, 18)
