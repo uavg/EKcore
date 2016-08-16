@@ -4,7 +4,7 @@
 	<Script file="Blizz_GuildUI_Status.lua"/>
 	<Script file="FastError.lua"/>	
 	<Script file="FriendColor.lua"/>
-	<Script file="GuildIcons.lua"/>
+	<Script file="GuildRosterButtons.lua"/>
 	<Script file="HideTalkingHead.lua"/>
 	<Script file="ImprovedLootFrame.lua"/>
 	<Script file="ImprovedOptionsFrames.lua"/>
