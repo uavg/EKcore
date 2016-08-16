@@ -6,6 +6,10 @@
 	<Script file="FriendColor.lua"/>
 	<Script file="GuildRosterButtons.lua"/>
 	<Script file="HideTalkingHead.lua"/>
+	
+	<Script file="iLFRDescription.lua"/>
+	<Script file="iLFRDescription_bossList.lua"/>
+	
 	<Script file="ImprovedLootFrame.lua"/>
 	<Script file="ImprovedOptionsFrames.lua"/>
 	<Script file="ImprovedStableFrame.lua"/>	
