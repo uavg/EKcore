@@ -12,12 +12,14 @@
 	
 	<Script file="ImprovedLootFrame.lua"/>
 	<Script file="ImprovedOptionsFrames.lua"/>
-	<Script file="ImprovedStableFrame.lua"/>	
+	<Script file="ImprovedStableFrame.lua"/>
+	<Script file="m_LootGroup.lua"/>
 	<Script file="MailinputboxResizer.lua"/>
 	<Script file="MerchantFilterButtons.lua"/>
+	
 	<Script file="OrderHallIcon.lua"/>
 	<Script file="PokeBandage.lua"/>
-	<Script file="RollHistory.lua"/>	
+	<!--Script file="RollHistory.lua"/-->	
 	<Script file="WordMapPlayerDotResizer.lua"/>
 	<Script file="WorldFlightMap.lua"/>
 </Ui>

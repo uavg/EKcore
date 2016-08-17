@@ -288,6 +288,7 @@
 	
 -- timer bars ---------------------------------------------------------------------------
 
+
 	hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddTimerBar", function(self, block, line, duration, startTime)
 		local tb = self.usedTimerBars[block] and self.usedTimerBars[block][line]
 		
@@ -305,7 +306,7 @@
     local function SkinScenarioButtons()
         local block = ScenarioStageBlock
         local _, currentStage, numStages, flags = C_Scenario.GetInfo()
-        local inChallengeMode = C_Scenario.IsInScenario()
+        --local inChallengeMode = C_Scenario.IsInScenario()
         
         -- we have to independently resize the artwork
         -- because we're messing with the tracker width >_>

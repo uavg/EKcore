@@ -1,5 +1,3 @@
---[[ Note: Code from user jnwhiteh here : http://wowprogramming.com/forums/development/104 slightly changed for use with this addon ]]
-
 local delay = 0.5
 local time = 0
 local frame = CreateFrame("Frame")

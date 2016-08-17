@@ -1,6 +1,6 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 	<Script file="AchievementSS.lua"/>	
-	<Script file="CinematicSkip.lua"/>	
+	<!--Script file="CinematicSkip.lua"/-->	
 	<Script file="EventBossAutoSelect.lua"/>	
 	<Script file="FakeAchievement.lua"/>
 	<Script file="FollowerClick.lua"/>	

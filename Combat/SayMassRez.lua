@@ -32,4 +32,4 @@ SayMassRez:SetScript("OnEvent",function(_,_,_,event, _,_,sourceName, _,_,_,_,_,_
 end)
 
 SayMassRez:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-DEFAULT_CHAT_FRAME:AddMessage("SayMassRez loaded")
+--DEFAULT_CHAT_FRAME:AddMessage("SayMassRez loaded")

@@ -15,16 +15,15 @@ FriendColor.lua
 #GearBuddy.lua
 #公會倉庫清單化
 #GuildBankList.lua
-
 #公會選單按鈕化
-GuildIcons.lua
+GuildRosterButtons.lua
 #加長拾取框體
 ImprovedLootFrame.lua
 #解鎖介面框體
 ImprovedOptionsFrames.lua
 #加大獸欄介面
 ImprovedStableFrame.lua
-#社交分頁
+#分頁
 
 #加長收件人名欄
 MailinputboxResizer.lua
@@ -32,10 +31,6 @@ MailinputboxResizer.lua
 MerchantFilterButtons.lua
 #寵物介面繃帶按鈕
 PokeBandage.lua
-
 #搜索顯示等級不會被變成"..."
 #wholevelshow.lua
-#大地圖隊友放大
-WordMapPlayerDotResizer.lua
-#大地圖替換飛行地圖
-WorldFlightMap.lua
+

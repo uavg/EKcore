@@ -195,18 +195,21 @@ local function eventHandler(self, event, ...)
 		local name, rank, fileID, castTime, minRange, maxRange, spellID = GetSpellInfo(id)
 		local seconds = GetTime();
 		local timeleft = (start + duration - seconds);
+		local icon = GetSpellTexture(spellID)
+		
         if name == "Synapse Springs" then else -- add blacklist for loop check here?
 			if unit == "player"  then
 				if duration > 1.5 then
                     local iconframe = CreateFrame("frame", nil, UIParent) -- Draw all this now inside the function so each frame overwrites
                     iconframe:SetPoint("CENTER", xoff, yoff)					  -- eachother and doesnt appear in a bit jumbled mess
                     iconframe:SetSize(iconsize, iconsize)
-					iconframe:SetBackdrop({
-                        bgFile = icon
-                        })
+                    texture = iconframe:CreateTexture(nil, "LOW") -- creates frame to set the texture too
+					texture:SetPoint("CENTER", xoff, yoff)
+					texture:SetSize(iconsize, iconsize)
+					texture:SetTexture(icon)
 					UIFrameFlash(iconframe, 0, fdur, fdur, false, 0, 0)	
                     local tr = iconframe:CreateFontString()				
-                    tr:SetPoint("BOTTOM", 0, 0)
+                    tr:SetPoint("BOTTOM", xoff, yoff)
                     tr:SetSize(40, 40)
                     tr:SetFont(tfont, fontsize, "OUTLINE")
                     tr:SetTextColor(1,0.7,0.7)	
@@ -222,8 +225,6 @@ local function eventHandler(self, event, ...)
          end      
 	elseif event == "UI_ERROR_MESSAGE" then -- Shows a X for when you have no target or the current target is invalid. Event doesnt fire all the time however
 		local message = ...;
-
-
 			if message == 50 or message == 220 or message == 193 or message == 194 then
                 local iconframe2 = CreateFrame("Frame", nil, UIParent)                
                 iconframe2:SetPoint("CENTER", xoff, yoff)
@@ -237,9 +238,3 @@ local function eventHandler(self, event, ...)
 	end
 end
 frame:SetScript("OnEvent", eventHandler); -- Script that runs the function when an event happens
-
-
-
-
-
-

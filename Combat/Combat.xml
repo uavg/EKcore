@@ -7,6 +7,9 @@
 	<Script file="EasyLogger.lua"/>
 	<Script file="HealthWarning.lua"/>
 	<Script file="Krys_Interrupt!.lua"/>
+	<Script file="QuickTalents.lua"/>
+	<Script file="SayMassRez.lua"/>
 	<Script file="SaySapped.lua"/>
+	<Script file="SpellNotReadyYet.lua"/>
 </Ui>
 

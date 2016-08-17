@@ -38,7 +38,7 @@ Gchat = function()
 	ChatFrame_AddChannel(ChatFrame3, "Gruul")
 end
 SlashCmdList["GCHAT"] = Gchat
-SLASH_DCHAT1 = "/gchat"
+SLASH_GCHAT1 = "/gchat"
 --預設的頻道(大腳世界頻道-簡體)
 Dchat = function()
 	JoinTemporaryChannel("大脚世界频道")
