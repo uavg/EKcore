@@ -5,5 +5,6 @@
 	<Script file="OneClickBuyOut.lua"/>	
 	<Script file="OneClickEnchantScroll.lua"/>	
 	<Script file="TrainAll.lua"/>
+	<Script file="TradeTabs.lua"/>
 </Ui>
 

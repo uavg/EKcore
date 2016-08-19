@@ -41,6 +41,7 @@ ns.class = {
 	["MAGE"] = { 0.2, 0.35, 0.2},
 	["SHAMAN"] = { 0, 0, 0},
 	["MONK"] = { 0.1,0.1, 0.1},
+	["DEMONHUNTER"] = { 0, 0, 0},
 }
 
 local MyAddon = CreateFrame("Frame")
