@@ -8,7 +8,7 @@
 OmniCC = true                               -- hack to work around detection from other addons for OmniCC
 
 local FONT_COLOR = {1, 1, 1}
-local FONT_FACE, FONT_SIZE = 'Fonts\\1.ttf', 18 
+local FONT_FACE, FONT_SIZE = STANDARD_TEXT_FONT, 18 
 
 local MIN_DURATION = 2.5                    -- the minimum duration to show cooldown text for
 local DECIMAL_THRESHOLD = 2                 -- threshold in seconds to start showing decimals

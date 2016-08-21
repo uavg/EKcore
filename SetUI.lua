@@ -494,7 +494,7 @@ SLASH_SETUI2 = "/SETUI"
 SlashCmdList["SETUI"] = function()
 		StaticPopup_Show("SET_UI")
 end
-	
+
 --[[ 協助選項 ]]
 local f = CreateFrame("Frame")
 f:RegisterEvent("PLAYER_LOGIN")
