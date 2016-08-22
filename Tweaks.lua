@@ -1,4 +1,24 @@
-﻿-- 關閉大地圖自身TOOLTIP
+﻿-- 強制載入CVAR，適用於無法正確套用的設定
+--[[CVAR = CreateFrame("Frame") 
+CVAR:RegisterEvent("PLAYER_ENTERING_WORLD") 
+CVAR:SetScript("OnEvent", function(self, event) 
+	self:UnregisterEvent("PLAYER_ENTERING_WORLD") 
+	SetCVar("cameraDistanceMaxFactor", 2.6) 
+end)]]--
+
+--[[function defaultcvar() 
+	SetCVar("cameraDistanceMaxFactor", 2.6)
+end 
+
+local frame = CreateFrame("FRAME", "defaultcvar")
+	frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+		local function eventHandler(self, event, ...) 
+			defaultcvar() 
+end 
+frame:SetScript("OnEvent", eventHandler)
+]]--
+
+-- 關閉大地圖自身TOOLTIP
 WorldMapPlayerUpper:EnableMouse(false)
 WorldMapPlayerLower:EnableMouse(false)
 
@@ -36,6 +56,19 @@ QuestFontHighlight:SetFont(STANDARD_TEXT_FONT, 18)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", function(msg) return true end)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", function(msg) return true end)
 
+-- 看動畫時開啟聲音，看完關掉
+--[[function Augmento.CINEMATIC_START(boolean)
+   SetCVar('Sound_EnableMusic', 1)
+   SetCVar('Sound_EnableAmbience', 1)
+   SetCVar('Sound_EnableSFX', 1)
+end
+
+function Augmento.CINEMATIC_STOP()
+   SetCVar('Sound_EnableMusic', 0)
+   SetCVar('Sound_EnableAmbience', 1)
+   SetCVar('Sound_EnableSFX', 1)
+end]]--
+
 -- 隱藏當每次打開大地圖時角色標記周圍的提示特效
 local ping = WorldMapPing
 ping:SetScript("OnShow", ping.Hide)
@@ -56,11 +89,19 @@ SLASH_S31 = "/s3"
 SlashCmdList["S4"] = function() SetSpecialization(4) print("切換第四專精...") end
 SLASH_S41 = "/s4"
 
--- 準備確認 ready check
+-- 座騎的特殊動作
+SlashCmdList["MOUNTSP"] = function() 
+	if (GetUnitSpeed("player") == 0) then
+		DoEmote("MOUNTSPECIAL")
+	end
+end
+SLASH_MOUNTSP1 = "/ms"
+
+-- 準備確認
 SlashCmdList["READYCHECKSLASHRC"] = function() DoReadyCheck() end
 SLASH_READYCHECKSLASHRC1 = "/rc"
 
--- 角色職責確認 check role
+-- 角色職責確認
 SlashCmdList["CHECKROLE"] = function() InitiateRolePoll() end
 SLASH_CHECKROLE1 = "/cr"
 
@@ -117,7 +158,7 @@ SlashCmdList["PARTYTORAID"] = function()
 end
 SLASH_PARTYTORAID1 = "/ptr"
 
--- Disband Group 解散隊伍
+-- 解散隊伍
 local GroupDisband = function()
 	local pName = UnitName("player")
 	if IsInRaid() then
@@ -224,4 +265,3 @@ roll:SetSize(25,25) -- 大小
 roll.t = roll:CreateTexture()
 roll.t:SetAllPoints()
 roll.t:SetTexture("Interface\\Buttons\\UI-GroupLoot-Dice-Up")
-

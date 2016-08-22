@@ -1,18 +1,29 @@
--- License: Public Domain
-
+-- 對話框縮放/移動/隱藏
 local f = CreateFrame("Frame")
 
 function f:OnEvent(event, addon)
 	if addon == "Blizzard_TalkingHeadUI" then
 		hooksecurefunc("TalkingHeadFrame_PlayCurrent", function()
-			TalkingHeadFrame:Hide()
-			--TalkingHeadFrame:SetScale(0.7)
-			--TalkingHeadFrame:ClearAllPoints()
-			--TalkingHeadFrame:(point, uiparent, Point, x, y)
+			--TalkingHeadFrame:Hide()
+			TalkingHeadFrame:SetScale(0.7)
+			TalkingHeadFrame:ClearAllPoints()
+			TalkingHeadFrame:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 90)
 		end)
 		self:UnregisterEvent(event)
 	end
 end
+
+-- 將對話框錨點與alertframe分離
+hooksecurefunc(AlertFrame, "AddAlertFrameSubSystem", function(self, alertFrameSubSystem)
+	if alertFrameSubSystem.anchorFrame == TalkingHeadFrame then
+		for i, alertSubSystem in pairs(AlertFrame.alertFrameSubSystems) do
+			if alertFrameSubSystem == alertSubSystem then
+				tremove(AlertFrame.alertFrameSubSystems, i)
+				return 
+			end
+		end
+	end
+end)
 
 f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", f.OnEvent)
