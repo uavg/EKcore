@@ -1,7 +1,8 @@
+#EKcore
+
 A mini core for WOW config
 
-
--- to test alert frame
+#To test alert frame
 
 /run MoneyWonAlertSystem:AddAlert(815)
 
@@ -15,8 +16,7 @@ A mini core for WOW config
 
 /run GarrisonFollowerAlertSystem:AddAlert(112, "Cool Guy", "100", 3, 1)
 
-
--- slash cmd
+#Slash cmd
 
 版本更新請記得重置設定：/console cvar_default")
 
@@ -44,4 +44,10 @@ A mini core for WOW config
 
 自動套用BW或DBM設定：/setbw或/setdbm
 
-切換副本模式/5n /5h /5m /10n /10h /25n /25h /nm /hm /mm
+切換副本模式：/5n /5h /5m /10n /10h /25n /25h /nm /hm /mm
+
+#To do
+
+整合清單，各種單體的來源列表
+
+將原excel的changlog搬運過來
