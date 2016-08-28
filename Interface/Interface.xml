@@ -17,7 +17,6 @@
 	<Script file="MailinputboxResizer.lua"/>
 	<Script file="MerchantFilterButtons.lua"/>
 	
-	<Script file="OrderHallIcon.lua"/>
 	<Script file="PokeBandage.lua"/>
 	<!--Script file="RollHistory.lua"/-->	
 	<Script file="WordMapPlayerDotResizer.lua"/>
