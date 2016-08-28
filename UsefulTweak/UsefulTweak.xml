@@ -5,9 +5,11 @@
 	<Script file="FakeAchievement.lua"/>
 	<Script file="FollowerClick.lua"/>	
 	<Script file="ObjectiveTrackerForModernists.lua"/>	
+	<Script file="OrderHallIcon.lua"/>
 	<Script file="PostmasterGeneral.lua"/>	
 	<Script file="Raidmanager.lua"/>	
 	<Script file="rVignette.lua"/>
+	<Script file="SayGMOTD.lua"/>
 	<Script file="ShiftRight.lua"/>	
 </Ui>
 
