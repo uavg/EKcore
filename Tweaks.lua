@@ -1,12 +1,15 @@
 ﻿-- 強制載入CVAR，適用於無法正確套用的設定
---[[CVAR = CreateFrame("Frame") 
+--[[
+CVAR = CreateFrame("Frame") 
 CVAR:RegisterEvent("PLAYER_ENTERING_WORLD") 
 CVAR:SetScript("OnEvent", function(self, event) 
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD") 
 	SetCVar("cameraDistanceMaxFactor", 2.6) 
-end)]]--
+end)
+]]--
 
---[[function defaultcvar() 
+--[[
+local function defaultcvar() 
 	SetCVar("cameraDistanceMaxFactor", 2.6)
 end 
 
@@ -17,6 +20,30 @@ local frame = CreateFrame("FRAME", "defaultcvar")
 end 
 frame:SetScript("OnEvent", eventHandler)
 ]]--
+
+--[[
+function EventFrame:PLAYER_ENTERING_WORLD()
+if not Blizzard_CompactRaidFrames then LoadAddOn("Blizzard_CompactRaidFrames") end
+CompactRaidFrameManager:UnregisterAllEvents()
+CompactRaidFrameManager:Hide()
+CompactRaidFrameContainer:UnregisterAllEvents()
+CompactRaidFrameContainer:Hide()
+EventFrame:UnregisterEvent("PLAYER_ENTERING_WORLD")
+end
+]]--
+
+-- 看動畫時開啟聲音，看完關掉
+--[[function Augmento.CINEMATIC_START(boolean)
+   SetCVar('Sound_EnableMusic', 1)
+   SetCVar('Sound_EnableAmbience', 1)
+   SetCVar('Sound_EnableSFX', 1)
+end
+
+function Augmento.CINEMATIC_STOP()
+   SetCVar('Sound_EnableMusic', 0)
+   SetCVar('Sound_EnableAmbience', 1)
+   SetCVar('Sound_EnableSFX', 1)
+end]]--
 
 -- 關閉大地圖自身TOOLTIP
 WorldMapPlayerUpper:EnableMouse(false)
@@ -55,19 +82,6 @@ QuestFontHighlight:SetFont(STANDARD_TEXT_FONT, 18)
 --ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_NOTICE", function(msg) return true end)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", function(msg) return true end)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", function(msg) return true end)
-
--- 看動畫時開啟聲音，看完關掉
---[[function Augmento.CINEMATIC_START(boolean)
-   SetCVar('Sound_EnableMusic', 1)
-   SetCVar('Sound_EnableAmbience', 1)
-   SetCVar('Sound_EnableSFX', 1)
-end
-
-function Augmento.CINEMATIC_STOP()
-   SetCVar('Sound_EnableMusic', 0)
-   SetCVar('Sound_EnableAmbience', 1)
-   SetCVar('Sound_EnableSFX', 1)
-end]]--
 
 -- 隱藏當每次打開大地圖時角色標記周圍的提示特效
 local ping = WorldMapPing
