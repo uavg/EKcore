@@ -8,7 +8,7 @@ local iconsize = 28 					-- loot frame icon's size
 local position = {"CENTER", 0,260}  	-- roll frames positioning
 local bar_width = 260					-- group roll bar width
 local bar_height = 10					-- group roll bar height
-local barspacing = 4  --間距
+local barspacing = 22  --間距
 
 local backdrop = {
 	bgFile = blanktex, tile = true, tileSize = 0,
@@ -35,7 +35,7 @@ end
 
 local function SetItemTip(frame)
 	if not frame.link then return end
-	GameTooltip:SetOwner(frame, "ANCHOR_TOPLEFT")
+	GameTooltip:SetOwner(frame, "ANCHOR_LEFT", -5, -25)
 	GameTooltip:SetHyperlink(frame.link)
 	if IsShiftKeyDown() then GameTooltip_ShowCompareItem() end
 	if IsModifiedClick("DRESSUP") then ShowInspectCursor() else ResetCursor() end
@@ -336,7 +336,8 @@ SlashCmdList.TESTROLL = function()
 	if f:IsShown() then
 		f:Hide()
 	else
-		local items = {132444}
+		--local items = {132444}
+		local items = {72163}
 		local item = items[math.random(1, #items)]
 		local quality = select(3, GetItemInfo(item))
 		local texture = select(10, GetItemInfo(item))
