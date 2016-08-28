@@ -3,12 +3,12 @@
 local UIcfg = function()
 --以下這些設置的巨集應用為 /run SetCVar("cvar", "值") 或/console cvar 值
 --要還原預設值為 /run SetCVar("cvar",GetCVarDefault("cvar")) 
---#為遊戲中無選項的設置
---*為遊戲預設值
+--"#"為遊戲中無選項的設置
+--"*"為遊戲預設值
 
 --[[ 系統 ]]
 
-	--啟用UI縮放，0關
+	--*啟用UI縮放，0關
 	SetCVar("useUiScale", 0)
 	--若上項設為1則此處設置縮放比
 	--SetCVar("uiScale", 0.8)
@@ -41,9 +41,6 @@ local UIcfg = function()
 --[[ 其他待確認 ]]
 
 	--SetCVar("removeChatDelay", 0)	
-	--SetCVar("petStatusText", 0)
-	--SetCVar("partyStatusText", 0)
-	--SetCVar("targetStatusText", 1)
 	--SetCVar("alternateResourceText", 1)
 	
 --[[ 控制 ]]
@@ -280,7 +277,7 @@ local UIcfg = function()
 	SetCVar("NamePlateHorizontalScale", 1)
 	SetCVar("NamePlateVerticalScale", 3)
 	--*總是顯示名條
-	SetCVar("nameplateShowAll", 0)
+	SetCVar("nameplateShowAll", 1)
 	--*警示目標轉移
 	SetCVar("ShowNamePlateLoseAggroFlash", 1)
 	--名條排列，1是垂直堆疊
@@ -300,11 +297,16 @@ local UIcfg = function()
 	
 	--#顯示名條的最遠距離，legion默認是60，以前是40
 	SetCVar("nameplateMaxDistance", 40)
-	--#不讓距離內螢幕外的名條貼邊，預設(0.8,1)
+	--#不讓距離內螢幕外的名條貼邊，預設(0.08, 0.1)
 	--SetCVar("nameplateOtherTopInset", -1) 
 	--SetCVar("nameplateOtherBottomInset", -1)
 	--#隱藏個人資源上醜陋的使用閃光動畫效果
 	SetCVar("showSpenderFeedback", 0)
+	--#不讓名條隨距離而變小，預設最小值是0.8
+	SetCVar("namePlateMinScale", 1)
+	SetCVar("namePlateMaxScale", 1)
+	--#名條縮放的距離，預設是10碼
+	--SetCVar("nameplateMinScaleDistance", 10)
 
 --[[ 鏡頭 ]]
 
