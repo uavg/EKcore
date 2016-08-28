@@ -39,6 +39,7 @@ Gchat = function()
 end
 SlashCmdList["GCHAT"] = Gchat
 SLASH_GCHAT1 = "/gchat"
+
 --預設的頻道(大腳世界頻道-簡體)
 Dchat = function()
 	JoinTemporaryChannel("大脚世界频道")
@@ -47,3 +48,25 @@ Dchat = function()
 end
 SlashCmdList["DCHAT"] = Dchat
 SLASH_DCHAT1 = "/dchat"
+
+--清空聊天框
+SlashCmdList["CLEAR"] = function()
+  -- Clear selected ChatFrame
+  SELECTED_CHAT_FRAME:Clear()
+  -- Check for CombatLog Frame and Clear it the right way
+  if IsCombatLog(SELECTED_CHAT_FRAME) then
+		CombatLogClearEntries()
+	end	  
+end
+SLASH_CLEAR1        = "/cc"
+
+--清空所有聊天框
+SlashCmdList["CLEARALL"] = function()
+  -- Clear ALL ChatFrames
+	for i=1, NUM_CHAT_WINDOWS do
+		_G["ChatFrame"..i]:Clear()
+	end  
+  -- Clear CombatLog the right way
+	CombatLogClearEntries()  
+end
+SLASH_CLEARALL1     = "/cca"
