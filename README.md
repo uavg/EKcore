@@ -18,9 +18,11 @@ A mini core for WOW config
 
 #Slash cmd
 
-版本更新請記得重置設定：/console cvar_default")
+版本更新請記得重置設定：/console cvar_default
 
 重載界面/rl
+
+座騎動作/ms
 
 切換天賦/s#
 
@@ -40,11 +42,21 @@ A mini core for WOW config
 
 傳送副本/dgt
 
-自動套用介面設定：/setui
+自動套用介面設定/setui
 
 自動套用BW或DBM設定：/setbw或/setdbm
 
 切換副本模式：/5n /5h /5m /10n /10h /25n /25h /nm /hm /mm
+
+清空當前聊天框/cc
+
+清空全部聊天框/cca
+
+自動套用聊天框設定/setchat
+
+暗影之月專用頻道/gchat
+
+簡體大腳頻道/dchat
 
 #To do
 
