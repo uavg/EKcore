@@ -502,13 +502,13 @@ local f = CreateFrame("Frame")
 f:RegisterEvent("PLAYER_LOGIN")
 f:SetScript("OnEvent", function(self, event)
 	if event == "PLAYER_LOGIN" then
-			print("|cff00ffffEKE|rmini:V7.0.20160809，輸入/uihelp查看指令，/qc查看每日每周任務")
+			print("|cff00ffffEK|rcore:輸入/uihelp查看指令")
 	end
 end)
 
 SlashCmdList["UIHELP"] = function() 
 	print("重載界面/rl；切換天賦/s#；小地圖右鍵開啟微型選單") 
-	print("小地圖中鍵追蹤選單，右鍵微型選單，滾輪放大，alt滾輪地圖放大") 
+	print("右鍵微型選單，滾輪放大，alt滾輪地圖放大") 
 	print("版本更新請記得重置設定：/console cvar_default")
 	print("準備確認/rc；職責檢查/cr")
 	print("解散隊伍/rd；離開隊伍/lg；離開pvp地圖/lbg")

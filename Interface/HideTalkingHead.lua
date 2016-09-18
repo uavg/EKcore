@@ -1,3 +1,5 @@
+if not Blizzard_TalkingHeadUI then LoadAddOn("Blizzard_TalkingHeadUI") end
+
 -- 對話框縮放/移動/隱藏
 local f = CreateFrame("Frame")
 
@@ -14,7 +16,7 @@ function f:OnEvent(event, addon)
 end
 
 -- 將對話框錨點與alertframe分離
-hooksecurefunc(AlertFrame, "AddAlertFrameSubSystem", function(self, alertFrameSubSystem)
+--[[hooksecurefunc(AlertFrame, "AddAlertFrameSubSystem", function(self, alertFrameSubSystem)
 	if alertFrameSubSystem.anchorFrame == TalkingHeadFrame then
 		for i, alertSubSystem in pairs(AlertFrame.alertFrameSubSystems) do
 			if alertFrameSubSystem == alertSubSystem then
@@ -23,7 +25,17 @@ hooksecurefunc(AlertFrame, "AddAlertFrameSubSystem", function(self, alertFrameSu
 			end
 		end
 	end
-end)
+end)]]--
+
+local function RemoveAnchor()
+	for i, alertSubSystem in pairs(AlertFrame.alertFrameSubSystems) do
+		if alertSubSystem.anchorFrame == TalkingHeadFrame then
+			tremove(AlertFrame.alertFrameSubSystems, i)
+			return 
+		end
+	end
+end
 
 f:RegisterEvent("ADDON_LOADED")
+f:RegisterEvent("MODIFIER_STATE_CHANGED")
 f:SetScript("OnEvent", f.OnEvent)

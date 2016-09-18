@@ -33,7 +33,8 @@ end
 ]]--
 
 -- 看動畫時開啟聲音，看完關掉
---[[function Augmento.CINEMATIC_START(boolean)
+--[[
+function Augmento.CINEMATIC_START(boolean)
    SetCVar('Sound_EnableMusic', 1)
    SetCVar('Sound_EnableAmbience', 1)
    SetCVar('Sound_EnableSFX', 1)
@@ -43,26 +44,49 @@ function Augmento.CINEMATIC_STOP()
    SetCVar('Sound_EnableMusic', 0)
    SetCVar('Sound_EnableAmbience', 1)
    SetCVar('Sound_EnableSFX', 1)
-end]]--
+end
+]]--
+
+--字體描邊.....還是算了不用
+--[[
+RaidWarningFrame.slot1:SetFont(STANDARD_TEXT_FONT, 32, "OUTLINE")
+RaidWarningFrame.slot2:SetFont(STANDARD_TEXT_FONT, 32, "OUTLINE")
+RaidBossEmoteFrame.slot1:SetFont(STANDARD_TEXT_FONT, 40, "OUTLINE")
+RaidBossEmoteFrame.slot2:SetFont(STANDARD_TEXT_FONT, 40, "OUTLINE")
+]]--
 
 -- 關閉大地圖自身TOOLTIP
 WorldMapPlayerUpper:EnableMouse(false)
 WorldMapPlayerLower:EnableMouse(false)
 
--- 自動啟用快捷列(只在登入時生效)
+-- 自動啟用快捷列(只在登入時生效，重載無效)
 SetActionBarToggles(1, 1, 1, 1)
 
 -- 反向清理背包
 SetSortBagsRightToLeft(true)
 
---禁用"將戰利品方在最左邊"
---SetInsertItemsLeftToRight(false)
+-- 反向放置戰利品
+--SetInsertItemsLeftToRight(true)
 
 -- 脫戰後釋放記憶體
---local F = CreateFrame("Frame") 
---F:RegisterEvent("PLAYER_REGEN_ENABLED") 
---F:SetScript("OnEvent", function() _G.collectgarbage("collect") end)
-   
+--[[local F = CreateFrame("Frame") 
+F:RegisterEvent("PLAYER_REGEN_ENABLED") 
+F:SetScript("OnEvent", function() _G.collectgarbage("collect") end)
+]]--
+
+-- 延伸版
+--[[local eventcount = 0
+local Garbage = CreateFrame("Frame")
+Garbage:RegisterAllEvents()
+Garbage:SetScript("OnEvent", function(self, event)
+	eventcount = eventcount + 1
+
+	if (InCombatLockdown() and eventcount > 25000) or (not InCombatLockdown() and eventcount > 10000) or event == "PLAYER_ENTERING_WORLD" then
+		collectgarbage("collect")
+		eventcount = 0
+	end
+end)]]--
+
 -- 任務字體放大: 標題/描述/目標/內容
 QuestTitleFont:SetFont(STANDARD_TEXT_FONT, 18)
 QuestFont:SetFont(STANDARD_TEXT_FONT, 18)
@@ -211,7 +235,7 @@ SLASH_DGFIVE1 = "/5n"
 SlashCmdList["DGHERO"] = function() SetDungeonDifficultyID(2) end
 SLASH_DGHERO1 = "/5h"
 SlashCmdList["DGMYTH"] = function() SetDungeonDifficultyID(23) end
-SLASH_DGCHAL1 = "/5m"
+SLASH_DGMYTH1 = "/5m"
 
 -- 舊團隊副本模式切換 
 -- 存在問題

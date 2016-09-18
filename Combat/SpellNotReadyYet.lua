@@ -230,7 +230,7 @@ local function eventHandler(self, event, ...)
                 iconframe2:SetPoint("CENTER", xoff, yoff)
                 iconframe2:SetSize(iconsize, iconsize)
                 iconframe2:SetBackdrop({
-                        bgFile = "Interface\\TargetingFrame\\UI-RaidTargetingIcon_7"
+                        bgFile = "Interface\\TargetingFrame\\UI-RaidTargetingIcon_1"
                 })
                 iconframe2:SetFrameStrata("BACKGROUND")
 				UIFrameFlash(iconframe2, 0, fdur, fdur, false, 0, 0)

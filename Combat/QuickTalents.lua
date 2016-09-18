@@ -159,6 +159,7 @@ QuickTalents:SetScript("OnEvent",function(self)
 	self:SetClampedToScreen(true);
 	self:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 	self:SetBackdrop({bgFile = "Interface\\Buttons\\WHITE8X8"});
+	self:SetFrameStrata("BACKGROUND") 
 
 	local SpecText = self:CreateFontString();
 	SpecText:SetFont("Fonts\\ARIALN.TTF", 12, "OUTLINE");

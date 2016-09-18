@@ -1,7 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 	<Script file="alInterruptCD.lua"/>	
 	<Script file="alRaidCD.lua"/>	
-	<Script file="BabyMurlocA.lua"/>
+	<!--Script file="BabyMurlocA.lua"/-->
 	<Script file="BattleResAlert.lua"/>	
 	<Script file="CombatAlert.lua"/>	
 	<Script file="EasyLogger.lua"/>

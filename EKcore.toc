@@ -1,5 +1,7 @@
 ﻿## Interface: 70000
 ## Title: |cff00ffffEK|rcore
+## Version: 7.0.alpha5
+## SavedVariablesPerCharacter: GMOTD
 
 #格線
 eAlignUpdated.lua
@@ -30,7 +32,7 @@ Setui.lua
 #游標閃光@Dayn
 SnowfallCursor.lua
 #加快藍條
-SpeedyLoad.lua
+#SpeedyLoad.lua
 #快速指令@monoui
 Tweaks.lua
 

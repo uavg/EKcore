@@ -129,7 +129,9 @@ local lodFrames = {
   Blizzard_BlackMarketUI = { ["BlackMarketFrame"] = false }, -- UNTESTED
   Blizzard_ChallengesUI = { ["ChallengesLeaderboardFrame"] = false }, -- UNTESTED
   Blizzard_ItemUpgradeUI = { ["ItemUpgradeFrame"] = false, }, -- UNTESTED
-
+  
+  -- New in WoD
+  Blizzard_GarrisonUI = { ["GarrisonMissionFrame"] = false, },
 }
 
 if not wod then

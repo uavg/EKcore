@@ -4,7 +4,7 @@
 #成就截圖
 AchievementSS.lua
 #跳過動畫-提前按住ctrl則播放@pigmonkey(v4)
-#CinematicSkip.lua
+CinematicSkip.lua
 #按i自動跳到節日隨機
 EventBossAutoSelect.lua
 #偽造成就
