@@ -1,4 +1,4 @@
-if not Blizzard_TalkingHeadUI then LoadAddOn("Blizzard_TalkingHeadUI") end
+--if not Blizzard_TalkingHeadUI then LoadAddOn("Blizzard_TalkingHeadUI") end
 
 -- 對話框縮放/移動/隱藏
 local f = CreateFrame("Frame")
@@ -6,10 +6,10 @@ local f = CreateFrame("Frame")
 function f:OnEvent(event, addon)
 	if addon == "Blizzard_TalkingHeadUI" then
 		hooksecurefunc("TalkingHeadFrame_PlayCurrent", function()
-			--TalkingHeadFrame:Hide()
-			TalkingHeadFrame:SetScale(0.7)
+			TalkingHeadFrame:Hide()
+			--TalkingHeadFrame:SetScale(0.7)
 			TalkingHeadFrame:ClearAllPoints()
-			TalkingHeadFrame:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 90)
+			--TalkingHeadFrame:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 90)
 		end)
 		self:UnregisterEvent(event)
 	end
