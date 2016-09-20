@@ -113,12 +113,16 @@ local xp_update = function()
 
 			rest:SetMinMaxValues(0, 1)
 			rest:SetValue(0)
+			xp:Show()
+			rest:Show()
 			return
 		end
 
-		xp:SetAnimatedValues(0, 0, 1, 1)
-		rest:SetMinMaxValues(0, 1)
-		rest:SetValue(0)
+		--xp:SetAnimatedValues(0, 0, 1, 1)
+		xp:Hide()
+		rest:Hide()
+		--rest:SetMinMaxValues(0, 1)
+		--rest:SetValue(0)
 	else
 		local c, m, l	= UnitXP('player'), UnitXPMax('player'), UnitLevel('player')
 		local p 			= math.ceil(c/m*100)
@@ -129,6 +133,9 @@ local xp_update = function()
 		-- xp:SetValue(c)
 		rest:SetMinMaxValues(min(0, c), m)
 		rest:SetValue(r and (c + r) or 0)
+
+		xp:Show()
+		rest:Show()
 	end
 end
 
