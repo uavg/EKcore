@@ -154,13 +154,13 @@ iLFRD.encounters = {
 		-- The Emerald Nightmare
 			[1287] = { -- Darkbough
 				[1] = 1, -- Nythendra 1703
-				[3] = 3, -- Il'gynoth, Heart of Corruption 1738
 				[2] = 5, -- Elerethe Renferal 1744
+				[3] = 3, -- Il'gynoth, Heart of Corruption 1738
 			},
 			[1288] = { -- Tormented Guardians
 				[1] = 2, -- Ursoc 1667
-				[3] = 4, -- Dragons of the Nightmare 1704
-				[2] = 6, -- Cenarius 1750
+				[2] = 4, -- Dragons of the Nightmare 1704
+				[3] = 6, -- Cenarius 1750
 			},
 			[1289] = { -- Rift of Aln
 				[1] = 7, -- Xavius 1726

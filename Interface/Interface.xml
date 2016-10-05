@@ -1,11 +1,12 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 	<Script file="pmAlertFrame.lua"/>	
+	<Script file="HideTalkingHead.lua"/>
 	<!--Script file="bXP.lua"/-->	
 	<Script file="Blizz_GuildUI_Status.lua"/>
 	<Script file="FastError.lua"/>	
 	<Script file="FriendColor.lua"/>
 	<Script file="GuildRosterButtons.lua"/>
-	<Script file="HideTalkingHead.lua"/>
+	<Script file="GearBuddy.lua"/>
 	
 	<Script file="iLFRDescription.lua"/>
 	<Script file="iLFRDescription_bossList.lua"/>
