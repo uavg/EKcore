@@ -1,4 +1,4 @@
-local delay = 0.5
+local delay = 1
 local time = 0
 local frame = CreateFrame("Frame")
 frame:Hide()
