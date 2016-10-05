@@ -22,7 +22,7 @@ local UIcfg = function()
 	--#反和諧
 	--SetCVar("overrideArchive", 0)
 	--#全螢幕泛光
-	SetCVar("ffxGlow", 0)	
+	SetCVar("ffxGlow", 0)
 	--#*顯示LUA錯誤，0關
 	SetCVar("scriptErrors", 1)
 
@@ -30,7 +30,7 @@ local UIcfg = function()
 	SetCVar("alwaysCompareItems", 0) 
 	--#*進階提示，1開
 	SetCVar("UberTooltips", 1)
-	--#仇恨百分比
+	--#*仇恨百分比
 	--SetCVar("threatShowNumeric", 1)
 	
 	--#使用進階命令，其實無法寫入插件裡，這很危險！
@@ -92,6 +92,10 @@ local UIcfg = function()
 	SetCVar("breakUpLargeNumbers", 0) 
 	--#顯示目標所有的增減益效果，而非只顯示自己的，1開 
 	SetCVar("noBuffDebuffFilterOnTarget", 1) 
+	--#使tab的距離和判斷回到legion以前的設定，1是會tab到螢幕外距離內，2是會tab到距離外 
+	SetCVar("TargetPriorityAllowAnyOnScreen", 0) 
+	--#tab最近的目標 
+	SetCVar("Targetnearestuseold", 1)
 	
 --[[ 浮動戰鬥文字 ]]
 
@@ -121,27 +125,27 @@ local UIcfg = function()
 	--SetCVar("floatingCombatTextDamageReduction", 0)
 	--周期性傷害
 	--SetCVar("floatingCombatTextCombatLogPeriodicSpells", 0)
-	--*法術警示
-	--SetCVar("floatingCombatTextReactives", 1)
+	--法術警示
+	SetCVar("floatingCombatTextReactives", 0)
 	--他人的控場效果(例如 誘補(xxxx-xxxx))
 	--SetCVar("floatingCombatTextSpellMechanics", 1)
 	--*聲望變化
 	--SetCVar("floatingCombatTextRepChanges", 0)
-	--*友方治療者名稱
+	--#友方治療者名稱
 	SetCVar("floatingCombatTextFriendlyHealers", 1)
-	--*進入離開戰鬥
+	--進入離開戰鬥
 	--SetCVar("floatingCombatTextCombatState", 0)
-	--*低MP/低HP，預設1開
+	--低MP/低HP，預設1開
 	--SetCVar("floatingCombatTextLowManaHealth", 0)  
 	--*連擊點
 	--SetCVar("floatingCombatTextComboPoints", 0)
-	--*能量獲得
+	--能量獲得
 	--SetCVar("floatingCombatTextEnergyGains", 0)
-	--*周期性能量	
+	--周期性能量	
 	--SetCVar("floatingCombatTextPeriodicEnergyGains", 0)
-	--*榮譽擊殺
+	--榮譽擊殺
 	--SetCVar("floatingCombatTextHonorGains", 0)
-	--*光環
+	--光環
 	--SetCVar("floatingCombatTextAuras", 0)
 	
 --[[ 顯示 ]]
@@ -160,16 +164,16 @@ local UIcfg = function()
 	--教學說明
 	SetCVar("showTutorials", 0)
 	--#新內容(這並沒有什麼鳥用)
-	--SetCVar("showNPETutorials", 0)
+	SetCVar("showNPETutorials", 0)
 	
 	--#只在滑鼠移過時顯示數字
 	--SetCVar("statusText", 0)
 	--#移動時大地圖半透明，1開 
 	SetCVar("mapFade", 1)
-	--#*接任務後自動追蹤直到完成
+	--#*接任務後自動追蹤直到完成，1開
 	SetCVar("autoQuestWatch", 1)
-	--#當你達到一個任務目標時會自動觀察任務5分鐘
-	--SetCVar("autoQuestProgress", 1)	
+	--#當你達到一個任務目標時會自動觀察任務5分鐘，0關
+	SetCVar("autoQuestProgress", 0)	
 	
 --[[ 社交 ]]
 
@@ -188,7 +192,7 @@ local UIcfg = function()
 	
 	--*聊天方式 "im"是以即時通訊方式，"classic"是傳統模式
 	SetCVar("chatStyle", "classic")
-	--對話時間標記
+	--對話時間標記(24小時制，時分秒，藍色)
 	SetCVar("showTimestamps", "|cff64C2F5%H:%M:%S|r ") 
 	--*新的密語 "inline" "popout_and_inline" "popout"
 	SetCVar("whisperMode", "inline")
@@ -207,6 +211,12 @@ local UIcfg = function()
 	--SetCVar("chatMouseScroll", 1)
 	--#顯示公會離線成員，0關
 	SetCVar("guildShowOffline", 0) 
+	--#對話泡泡
+	SetCVar("chatBubbles", 1)
+	--隊伍對話泡泡
+	--SetCVar("chatBubblesParty", 0)
+	--
+	--SetCVar("colorChatNamesByClass", 1)
 	
 --[[ 快捷列 ]]
 
@@ -298,8 +308,8 @@ local UIcfg = function()
 	--#顯示名條的最遠距離，legion默認是60，以前是40
 	SetCVar("nameplateMaxDistance", 40)
 	--#不讓距離內螢幕外的名條貼邊，預設(0.08, 0.1)
-	--SetCVar("nameplateOtherTopInset", -1) 
-	--SetCVar("nameplateOtherBottomInset", -1)
+	SetCVar("nameplateOtherTopInset", -1) 
+	SetCVar("nameplateOtherBottomInset", -1)
 	--#隱藏個人資源上醜陋的使用閃光動畫效果
 	SetCVar("showSpenderFeedback", 0)
 	--#不讓名條隨距離而變小，預設最小值是0.8
@@ -318,7 +328,7 @@ local UIcfg = function()
 	SetCVar("cameraSmoothStyle", 0)
 	
 	--#當鏡頭在地上時讓你自由旋轉視角，0關(這是啥?)
-	SetCVar("cameraPivot", 0)
+	--SetCVar("cameraPivot", 0)
 	--#鏡頭跟隨地形，爬坡時往上，下坡時往下
 	--SetCVar("cameraTerrainTilt", 0)
 	
@@ -331,25 +341,26 @@ local UIcfg = function()
 	
 --[[ 單位框架 ]]
 
-	--設定無效
-	--使用團隊風格的隊伍框架
-	--SetCVar("useCompactPartyFrames", 1)
+	--設定無效？
+	
+	--在小隊使用團隊風格的隊伍框架
+	SetCVar("useCompactPartyFrames", 1)
 	--隊伍排列
-	--SetCVar("raidOptionKeepGroupsTogether", 1)
+	SetCVar("raidOptionKeepGroupsTogether", 1)
 	--顯示能量條
 	--SetCVar("raidFramesDisplayPowerBars", 1)
 	--顯示獲得仇恨
 	--SetCVar("raidFramesDisplayAggroHighlight", 1)
 	--顯示職業顏色
-	--SetCVar("raidFramesDisplayClassColor", 1)	
+	SetCVar("raidFramesDisplayClassColor", 1)	
 	--顯示寵物
 	--SetCVar("raidOptionDisplayPets", 0)
 	--顯示主坦與主助攻
 	--SetCVar("raidOptionDisplayMainTankAndAssist", 0)
 	--顯示邊框
 	--SetCVar("raidOptionShowBorders", 0)
-	--只顯示可驅散
-	--SetCVar("raidFramesDisplayOnlyDispellableDebuffs", 0)
+	--只顯示可驅散，0關
+	SetCVar("raidFramesDisplayOnlyDispellableDebuffs", 0)
 	--HP值
 	--SetCVar("raidFramesHealthText", none)
 	--大小
@@ -497,7 +508,7 @@ SlashCmdList["SETUI"] = function()
 		StaticPopup_Show("SET_UI")
 end
 
---[[ 協助選項 ]]
+--[[ 協助選項 ]]--
 local f = CreateFrame("Frame")
 f:RegisterEvent("PLAYER_LOGIN")
 f:SetScript("OnEvent", function(self, event)
@@ -505,10 +516,10 @@ f:SetScript("OnEvent", function(self, event)
 			print("|cff00ffffEK|rcore:輸入/uihelp查看指令")
 	end
 end)
-
+--[[
 SlashCmdList["UIHELP"] = function() 
-	print("重載界面/rl；切換天賦/s#；小地圖右鍵開啟微型選單") 
-	print("右鍵微型選單，滾輪放大，alt滾輪地圖放大") 
+	print("重載界面/rl；切換天賦/s#") 
+	print("小地圖右鍵微型選單，滾輪放大，alt滾輪地圖放大") 
 	print("版本更新請記得重置設定：/console cvar_default")
 	print("準備確認/rc；職責檢查/cr")
 	print("解散隊伍/rd；離開隊伍/lg；離開pvp地圖/lbg")
@@ -519,4 +530,18 @@ SlashCmdList["UIHELP"] = function()
 	print("切換副本模式/5n /5h /5m /10n /10h /25n /25h /nm /hm /mm")
 end
 SLASH_UIHELP1 = "/uihelp"
+SLASH_UIHELP2 = "/UIHELP"]]--
+
+StaticPopupDialogs.UI_HELP = {
+		text = "重載界面：/rl \n套用預設的介面設定：/setui \n重置聊天框體的位置：/setchat \n自動套用BW或DBM設定：/setbw或/setdbm \n\n清除當前聊天框的內容：/cc \n清除所有聊天框的內容：/cc \n開啟大腳世界頻道：/dchat\n\n準備確認：/rc \n角色職責檢查：/cr \n解散隊伍：/rd \n離開隊伍：/lg \n小隊團隊轉換：/rtp /ptr \n\n離開戰場或競技場：/lbg  \n重置副本：/dgr \n隨機副本傳送：/dgt \n\n切換五人副本模式：/5n /5h /5m  \n切換舊團隊副本模式：/10n /10h /25n /25h \n切換團隊副本模式：/nm /hm /mm \n\n切換專精：/s#，#為專精排序數字 \n\n小地圖右鍵開啟微型選單 \n\n滾輪可縮放地圖，alt+滾輪可縮放框體",
+		button1 = "知道了",
+		timeout = 0,
+		whileDead = 1,
+		hideOnEscape = true,
+		preferredIndex = 5,
+}
+SLASH_UIHELP1 = "/uihelp"
 SLASH_UIHELP2 = "/UIHELP"
+SlashCmdList["UIHELP"] = function()
+		StaticPopup_Show("UI_HELP")
+end
