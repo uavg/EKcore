@@ -3,14 +3,15 @@
 ## Version: 7.0.alpha5
 ## SavedVariablesPerCharacter: GMOTD
 
-#格線
-eAlignUpdated.lua
 #框體拖曳
 DragEmAll.lua
-#詞綴替換@freeui
+#格線
+eAlignUpdated.lua
+#詞綴替換
 Globalstrings.lua
 #天賦巨集(#tier_6)-換天賦自動變按鍵
 infMopTalentMacros.lua
+
 #按鍵綁定
 ncHoverBind.lua
 #冷卻計時
@@ -21,6 +22,7 @@ OpenAll.lua
 #QuestCheck.lua
 #距離染紅
 tullaRange.lua
+
 #bigwig預設
 SetBW.lua
 #聊天框架定位@monoui
@@ -29,11 +31,13 @@ Setchat.lua
 SetDBM.lua
 #CVAR@樓上的你媽媽叫你吃飯
 Setui.lua
+#快速指令@monoui
+Slashcmd.lua
 #游標閃光@Dayn
 SnowfallCursor.lua
 #加快藍條
 #SpeedyLoad.lua
-#快速指令@monoui
+#小功能
 Tweaks.lua
 
 #戰鬥輔助
