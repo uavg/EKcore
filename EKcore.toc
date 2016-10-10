@@ -12,6 +12,8 @@ Globalstrings.lua
 #天賦巨集(#tier_6)-換天賦自動變按鍵
 infMopTalentMacros.lua
 
+HSomeFix.lua
+
 #按鍵綁定
 ncHoverBind.lua
 #冷卻計時

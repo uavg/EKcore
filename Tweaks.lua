@@ -71,13 +71,15 @@ RaidBossEmoteFrame.slot2:SetFont(STANDARD_TEXT_FONT, 40, "OUTLINE")
 ]]--
 
 -- 脫戰後釋放記憶體
---[[local F = CreateFrame("Frame") 
+--[[
+local F = CreateFrame("Frame") 
 F:RegisterEvent("PLAYER_REGEN_ENABLED") 
 F:SetScript("OnEvent", function() _G.collectgarbage("collect") end)
 ]]--
 
 -- 延伸版，滿25000個事件清理記憶體
---[[local eventcount = 0
+--[[
+local eventcount = 0
 local Garbage = CreateFrame("Frame")
 Garbage:RegisterAllEvents()
 Garbage:SetScript("OnEvent", function(self, event)
@@ -89,7 +91,18 @@ Garbage:SetScript("OnEvent", function(self, event)
 	end
 end)]]--
 
-
+-- 簡易防暫離：坐下時會抽出武器站起來
+--[[
+local F = CreateFrame("frame")
+local T = 0
+F:SetScript("OnUpdate",function() 
+	local t=GetTime()
+		if t-T>0 and GetSheathState()==1 then
+		ToggleSheath()
+		T=t
+		end 
+end)
+]]--
 
 -- 過濾未學會的
 --C_ToyBox.SetUncollectedShown(false)
@@ -104,6 +117,10 @@ end)]]--
 --ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_NOTICE", function(msg) return true end)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", function(msg) return true end)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", function(msg) return true end)
+
+-- 刪除物品時自動輸入delete給你確認
+hooksecurefunc(StaticPopupDialogs["DELETE_GOOD_ITEM"],"OnShow",function(boxEditor)
+boxEditor.editBox:SetText(DELETE_ITEM_CONFIRM_STRING) end)
 
 -- 隱藏當每次打開大地圖時角色標記周圍的提示特效
 local ping = WorldMapPing
