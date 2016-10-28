@@ -1,9 +1,9 @@
 local AutoApply = true	          --自動套用，輸入/setchat
-local def_position = {"BOTTOMLEFT",UIParent,"BOTTOMLEFT",18,35}  --聊天框位置
-local chat_height = 260           --聊天框高度
-local chat_width = 420            --聊天框宽度
-local font = STANDARD_TEXT_FONT   --字体
-local fontsize = 18               --聊天框字体大小
+local def_position = {"BOTTOMLEFT",UIParent,"BOTTOMLEFT",10,20}  --位置
+local chat_height = 186           --聊天框高度
+local chat_width = 360            --聊天框寬度
+local font = STANDARD_TEXT_FONT   --字體
+local fontsize = 16               --字體大小
 
 SetChat = function()
     FCF_SetLocked(ChatFrame1, nil)
@@ -40,10 +40,10 @@ end
 SlashCmdList["GCHAT"] = Gchat
 SLASH_GCHAT1 = "/gchat"
 
---預設的頻道(大腳世界頻道-簡體)
+--大腳世界頻道
 Dchat = function()
-	JoinTemporaryChannel("大脚世界频道")
-	ChatFrame_AddChannel(ChatFrame3, "大脚世界频道")
+	JoinTemporaryChannel("大腳世界頻道")
+	ChatFrame_AddChannel(ChatFrame3, "大腳世界頻道")
 
 end
 SlashCmdList["DCHAT"] = Dchat

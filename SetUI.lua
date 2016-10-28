@@ -9,9 +9,9 @@ local UIcfg = function()
 --[[ 系統 ]]
 
 	--*啟用UI縮放，0關
-	SetCVar("useUiScale", 0)
+	SetCVar("useUiScale", 1)
 	--若上項設為1則此處設置縮放比
-	--SetCVar("uiScale", 0.8)
+	SetCVar("uiScale", 0.8)
 	--啟用進階戰鬥紀錄
 	SetCVar("advancedCombatLogging", 1)	 
 	
@@ -37,6 +37,8 @@ local UIcfg = function()
 	--SetCVar("AllowDangerousScripts", 1)
 	--#框體不顯示即將到來的治療
 	SetCVar("predictedHealth", 0)	
+	--#不在TOOLTIP上顯示任務進度
+	SetCVar("showQuestTrackingTooltips", 0)	
 
 --[[ 其他待確認 ]]
 
@@ -93,7 +95,11 @@ local UIcfg = function()
 	--#顯示目標所有的增減益效果，而非只顯示自己的，1開 
 	SetCVar("noBuffDebuffFilterOnTarget", 1) 
 	--#使tab的距離和判斷回到legion以前的設定，1是會tab到螢幕外距離內，2是會tab到距離外 
-	SetCVar("TargetPriorityAllowAnyOnScreen", 0) 
+	--SetCVar("TargetPriorityAllowAnyOnScreen", 0) 
+	--舊的tab運作邏輯
+	--SetCVar("Targetnearestuseold", 1)
+	--不tab身後目標
+	--SetCVar("TargetPriorityIncludeBehind", 0)
 	--#tab最近的目標 
 	SetCVar("Targetnearestuseold", 1)
 	
@@ -136,7 +142,7 @@ local UIcfg = function()
 	--進入離開戰鬥
 	--SetCVar("floatingCombatTextCombatState", 0)
 	--低MP/低HP，預設1開
-	--SetCVar("floatingCombatTextLowManaHealth", 0)  
+	SetCVar("floatingCombatTextLowManaHealth", 0)  
 	--*連擊點
 	--SetCVar("floatingCombatTextComboPoints", 0)
 	--能量獲得
@@ -146,7 +152,7 @@ local UIcfg = function()
 	--榮譽擊殺
 	--SetCVar("floatingCombatTextHonorGains", 0)
 	--光環
-	--SetCVar("floatingCombatTextAuras", 0)
+	SetCVar("floatingCombatTextAuras", 0)
 	
 --[[ 顯示 ]]
 
@@ -272,6 +278,8 @@ local UIcfg = function()
 
 	--#公會頭銜
 	SetCVar("UnitNameGuildTitle", 0)
+	--#角色頭銜
+	SetCVar("UnitNamePlayerPVPTitle", 1)
 	--#公會名稱，1開
 	--SetCVar("UnitNamePlayerGuild", 1)
 	--#姓名板職業顏色
@@ -323,7 +331,7 @@ local UIcfg = function()
 	--水體碰撞
 	
 	--最遠距離，最大2.6
-	SetCVar("CameraDistanceMaxFactor", 2.6)
+	--SetCVar("CameraDistanceMaxFactor", 2.6)
 	--鏡頭跟隨模式，0-永不調整，可選0,1,2,3,4--(1是只調整水平面)
 	SetCVar("cameraSmoothStyle", 0)
 	

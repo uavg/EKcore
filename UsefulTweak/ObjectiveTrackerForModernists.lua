@@ -8,14 +8,14 @@
 -- config -------------------------------------------------------------------------------
 
     -- set height of the objective tracker frame.
-    local otfheight = 600
+    local otfheight = 400
     
     -- set width of the objective tracker frame.
     -- note that this mostly doesn't affect the quest info blocks themselves.
-    local otfwidth = 180
+    local otfwidth = 150
     
     -- set font size of objective titles
-    local titlesize = 18
+    local titlesize = 16
     
     
 
@@ -38,7 +38,7 @@
     otf:SetClampedToScreen(true)
     otf:ClearAllPoints()
     otf.ClearAllPoints = function() end
-    otf:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", -95, -180) 
+    otf:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", -95, -80) 
     otf.SetPoint = function() end
     otf:SetMovable(true)
     otf:SetUserPlaced(true)

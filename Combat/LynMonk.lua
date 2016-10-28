@@ -4,7 +4,7 @@ if class ~= 'MONK' then return end
 -- config
 local alpha = 0.4
 local size = 32
-local position = {'CENTER', UIParent, 'CENTER', -260, -200}
+local position = {'BOTTOM', UIParent, 'BOTTOM', -130, 165}
 --local position = {'LEFT', oUF_MlightPlayer, 'RIGHT', 100, 0}
 --local position = {'BOTTOM', UIParent, 'BOTTOM', -38, 192} -- LynUI position
 

@@ -4,12 +4,12 @@ CVAR:RegisterEvent("PLAYER_ENTERING_WORLD")
 CVAR:SetScript("OnEvent", function(self, event) 
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD") 
 	-- 最遠視距(雖然hf從1.9上修到2.6但遊戲內會無法正確保存)
-	SetCVar("cameraDistanceMaxFactor", 2.6) 
+	SetCVar("cameraDistanceMaxZoomFactor", 2.6) 
 	-- 自動啟用快捷列(只在登入時生效，重載無效)
 	SetActionBarToggles(1, 1, 1, 1)
 	-- 關閉大地圖自身TOOLTIP
-	WorldMapPlayerUpper:EnableMouse(false)
-	WorldMapPlayerLower:EnableMouse(false)
+	--WorldMapPlayerUpper:EnableMouse(false)
+	--WorldMapPlayerLower:EnableMouse(false)
 	-- 反向清理背包
 	SetSortBagsRightToLeft(true)
 	-- 反向放置戰利品
@@ -123,8 +123,11 @@ hooksecurefunc(StaticPopupDialogs["DELETE_GOOD_ITEM"],"OnShow",function(boxEdito
 boxEditor.editBox:SetText(DELETE_ITEM_CONFIRM_STRING) end)
 
 -- 隱藏當每次打開大地圖時角色標記周圍的提示特效
-local ping = WorldMapPing
-ping:SetScript("OnShow", ping.Hide)
+-- I haven't found any documentation on this method and don't fully understand what the arguments do, 
+--so I haven't given them proper names
+hooksecurefunc(WorldMapUnitPositionFrame, "StartPlayerPing", function(self, arg1, arg2)
+	self:StopPlayerPing()
+end)
 
 -- 左鍵roll 右鍵舔
 local roll = CreateFrame("Button", "rollMacro", UIParent, "SecureActionButtonTemplate")
@@ -138,9 +141,9 @@ roll:SetScript("OnMouseDown", function(self, button)
 	  DoEmote("lick", "target")
       end	  
    end)
-roll:SetPoint("BOTTOM",UIParent,"BOTTOMLEFT", 25, 5)
+roll:SetPoint("BOTTOM",UIParent,"BOTTOMLEFT", 12, 2)
 
-roll:SetSize(25,25) -- 大小
+roll:SetSize(20,20) -- 大小
 roll.t = roll:CreateTexture()
 roll.t:SetAllPoints()
 roll.t:SetTexture("Interface\\Buttons\\UI-GroupLoot-Dice-Up")

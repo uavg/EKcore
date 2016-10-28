@@ -1,0 +1,6 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="AllTheIDs.lua"/>		
+	<Script file="CurrencyCache.lua"/>	
+	<Script file="GameTooltip.lua"/>	
+	<Script file="Other.lua"/>
+</Ui>

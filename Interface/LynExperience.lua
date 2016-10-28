@@ -1,15 +1,15 @@
 local SCALE			= 1
-local WIDTH 		= 180
-local HEIGHT 		= 7
+local WIDTH 		= 140
+local HEIGHT 		= 5
 local _, CLASS 		= UnitClass('player')
 local COLOR			= CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[CLASS] or RAID_CLASS_COLORS[CLASS]
 --local POSITION		= {'BOTTOM', Minimap, 'TOP', 0, -18}
 --local POSITION		= {'TOP', Minimap, 'BOTTOM', 0, 17}
-local POSITION		= {'BOTTOMLEFT', UIParent, 'BOTTOMLEFT', 47, 13}
-local OFFSET		= 190
+local POSITION		= {'BOTTOMLEFT', UIParent, 'BOTTOMLEFT', 30, 6}
+local OFFSET		= 150
 --local TIP			= {'BOTTOMRIGHT', UIParent, -265, 85}
 --local TIP			= {'TOPRIGHT', UIParent, -275, -235}
-local TIP			= {'BOTTOMLEFT', UIParent, 'BOTTOMLEFT', 390, 13}
+local TIP			= {'BOTTOMLEFT', UIParent, 'BOTTOMLEFT', 310, 6}
 local TEXTURE 		= [[Interface/Buttons/WHITE8X8]]
 
 f = CreateFrame('Frame', nil, UIParent)

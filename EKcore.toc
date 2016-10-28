@@ -1,4 +1,4 @@
-﻿## Interface: 70000
+﻿## Interface: 70100
 ## Title: |cff00ffffEK|rcore
 ## Version: 7.0.alpha5
 ## SavedVariablesPerCharacter: GMOTD
@@ -11,7 +11,7 @@ eAlignUpdated.lua
 Globalstrings.lua
 #天賦巨集(#tier_6)-換天賦自動變按鍵
 infMopTalentMacros.lua
-
+#公會和/who的等級不會被吃掉
 HSomeFix.lua
 
 #按鍵綁定
@@ -33,12 +33,13 @@ Setchat.lua
 SetDBM.lua
 #CVAR@樓上的你媽媽叫你吃飯
 Setui.lua
+
 #快速指令@monoui
 Slashcmd.lua
 #游標閃光@Dayn
 SnowfallCursor.lua
 #加快藍條
-#SpeedyLoad.lua
+SpeedyLoad.lua
 #小功能
 Tweaks.lua
 
@@ -50,4 +51,5 @@ Interface\Interface.xml
 TradeSkill\TradeSkill.xml
 #功能增強
 UsefulTweak\UsefulTweak.xml
-
+#各種id
+AllTheIDs\AllTheIDs.xml

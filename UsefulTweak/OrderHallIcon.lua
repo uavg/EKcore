@@ -3,7 +3,7 @@
 	Siweia
 ]]
 -- Configure
-local DefaultPoint = {"TOP", 0, -20}
+local DefaultPoint = {"TOP", 0, 0}
 
 -- Class and Colors
 local MyClass = select(2, UnitClass("player"))

@@ -1,11 +1,11 @@
 ﻿-- Config start
 local anchor = "TOPLEFT"
-local x, y = 5, -235
-local width, height = 150, 20
+local x, y = 10, -270
+local width, height = 120, 20
 local spacing = 3
 local icon_size = 20
 local font = GameFontHighlight:GetFont()
-local font_size = 14
+local font_size = 10
 local font_style = "OUTLINE"
 local backdrop_color = {0, 0, 0, 0.4}
 local border_color = {0, 0, 0, 1}

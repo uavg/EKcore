@@ -34,22 +34,22 @@ if(BigWigs3DB) then table.wipe(BigWigs3DB) end
 	    ["BigWigs_Plugins_Bars"] = {  --計時條
 		    ["profiles"] = {
 				["Default"] = {
-					["BigWigsEmphasizeAnchor_x"] = 825,  --大型計時條x座標
-					["BigWigsEmphasizeAnchor_y"] = 470, --大型計時條y座標
-					["BigWigsEmphasizeAnchor_width"] = 180, --大型計時條長度
+					["BigWigsEmphasizeAnchor_x"] = 812,  --大型計時條x座標
+					["BigWigsEmphasizeAnchor_y"] = 445, --大型計時條y座標
+					["BigWigsEmphasizeAnchor_width"] = 140, --大型計時條長度
 					["emphasizeGrowup"] = true, --大型計時條向上成長
 						
-				    ["BigWigsAnchor_x"] = 125, --小型計時條x座標
-					["BigWigsAnchor_y"] = 610, --小型計時條y座標
-					["BigWigsAnchor_width"] = 160, --小型計時條長度
+				    ["BigWigsAnchor_x"] = 178, --小型計時條x座標
+					["BigWigsAnchor_y"] = 747, --小型計時條y座標
+					["BigWigsAnchor_width"] = 140, --小型計時條長度
 					["growup"] = false, --小型計時條向上成長
 					
-					["fontSize"] = 12, --字體大小
+					["fontSize"] = 10, --字體大小
 					["barStyle"] = "RealUI", --計時條風格
 					["outline"] = "OUTLINE", --字體描邊
 					["font"] = "預設",
 
-					["emphasizeScale"] = 1.4,  --大型計時條縮放
+					["emphasizeScale"] = 1,  --大型計時條縮放
 					--["interceptMouse"] = true, --滑鼠點擊
 					},
 				},
@@ -57,6 +57,7 @@ if(BigWigs3DB) then table.wipe(BigWigs3DB) end
 		["BigWigs_Plugins_Super Emphasize"] = {
 			["profiles"] = {
 				["Default"] = {
+					["fontSize"] = 40,
 					["voice"] = "English: Amy",  --倒數語音
 					["font"] = "預設",
 				},
@@ -73,8 +74,8 @@ if(BigWigs3DB) then table.wipe(BigWigs3DB) end
 		["BigWigs_Plugins_Proximity"] = { --距離監視模塊
 			["profiles"] = {
 				["Default"] = {
-					["fontSize"] = 20,
-					["width"] = 120,
+					["fontSize"] = 16,
+					["width"] = 100,
 					["objects"] = {
 						["tooltip"] = false, --技能說明tooltip
 						["ability"] = false, --技能名稱
@@ -84,7 +85,7 @@ if(BigWigs3DB) then table.wipe(BigWigs3DB) end
 						},
 					["posy"] = 90, --距離監視Y座標
 					["posx"] = 340, --距離監視X座標
-					["height"] = 120, 
+					["height"] = 100, 
 				},
 			},
 		},
@@ -94,21 +95,29 @@ if(BigWigs3DB) then table.wipe(BigWigs3DB) end
 					["chat"] = true,  --發送訊息到聊天框
 					["monochrome"] = false, --禁用單色顯示
 					["outline"] = "OUTLINE", --字體描邊
-					["fontSize"] = 20, --字體大小
+					["fontSize"] = 16, --字體大小
 						["BWEmphasizeMessageAnchor_x"] = 550, --強調訊息X座標
 						["BWEmphasizeMessageAnchor_y"] = 660, --強調訊息Y座標
-						["BWMessageAnchor_y"] = 640, --訊息Y座標
-						["BWMessageAnchor_x"] = 810, --訊息X座標
+						["BWMessageAnchor_y"] = 620, --訊息Y座標
+						["BWMessageAnchor_x"] = 789, --訊息X座標
 					},
 				},
-			},			
+			},
+		["BigWigs_Plugins_InfoBox"] = {
+			["profiles"] = {
+				["Default"] = {
+					["posx"] = 305,
+					["posy"] = 643,
+				},
+			},
+		},			
 		["BigWigs_Plugins_Alt Power"] = {  --特殊能量
 			["profiles"] = {
 				["Default"] = {
-					["posx"] = 388,
-					["fontSize"] = 16,
+					["posx"] = 300,
+					["fontSize"] = 14,
 					["font"] = "預設",
-					["posy"] = 735,
+					["posy"] = 728,
 					["fontOutline"] = "OUTLINE",
 				},
 			},

@@ -1,4 +1,5 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="AlreadyKnown.lua"/>	
 	<Script file="AuctionCancel.lua"/>	
 	<Script file="AuctionPlus.lua"/>	
 	<Script file="OneClickBuyOut_BrowseButton.lua"/>

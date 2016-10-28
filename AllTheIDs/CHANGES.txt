@@ -1,0 +1,127 @@
+Changelog
+=========
+
+1.2.4 (2016-07-27)
+------------------
+
+- Hook into a few tooltips on the achievment UI for achievement IDs.
+  [Robin Schoonover]
+
+1.2.3.1 (2016-07-19)
+--------------------
+
+- Update TOC for 7.0 client. [Robin Schoonover]
+
+- Update CI scripts to use gitlab CI artifacts handling. [Robin
+  Schoonover]
+
+1.2.3 (2015-10-21)
+------------------
+
+- Show continent ID on world map. [Robin Schoonover]
+
+- Detect automatically whether we need a new NL or not when appending to
+  a font string. [Robin Schoonover]
+
+1.2.2 (2015-10-15)
+------------------
+
+- Work around Item ID not getting set properly in trade skill window.
+  [Robin Schoonover]
+
+  This appears to be a bug that was introduced in 6.2, and it seems likely the Toybox item
+  id not getting set properly might be related.
+
+
+- Don't leak globals, fix a few unintentional global refs, and upvalue a
+  few globals as well. [Robin Schoonover]
+
+1.2.1 (2015-10-06)
+------------------
+
+- Try not to break if we're given a bad tooltip. [Robin Schoonover]
+
+1.2 (2015-10-05)
+----------------
+
+- Handle item id for heirlooms in the heirloom collection, much like the
+  toy box collection. [Robin Schoonover]
+
+- Show Currency ID for currency pane. [Robin Schoonover]
+
+- Show currency ID for LFG reward tooltips. [Robin Schoonover]
+
+- In quest log, handle currency reward types. [Robin Schoonover]
+
+- In map quest log, fix item id, as it was returning an empty link in
+  the normal way. [Robin Schoonover]
+
+- Show Item IDs for toys. [Robin Schoonover]
+
+- Show Spell ID for mounts in mount collection. [Robin Schoonover]
+
+- Refactor addon loaded functionality. [Robin Schoonover]
+
+- On second thought, the Pet stuff into Other.lua [Robin Schoonover]
+
+- Also update TOC for filename change. [Robin Schoonover]
+
+- Rename PetJournal.lua to just Pets.lua [Robin Schoonover]
+
+1.1 (2015-10-03)
+----------------
+
+- Add Map ID to the world map. [Robin Schoonover]
+
+- Add support for Quest IDs in quest frame. [Robin Schoonover]
+
+- Add Faction ID for reputation detail frame. [Robin Schoonover]
+
+- Add upload rules to CI build. [Robin Schoonover]
+
+1.0 (2015-10-03)
+----------------
+
+- Make TOC ready for public release. [Robin Schoonover]
+
+- Add CI build script. [Robin Schoonover]
+
+- Also set pet species ID for wild pets. [Robin Schoonover]
+
+- Fix GameTooltip unit guid handling. [Robin Schoonover]
+
+- Fix PetJournal hooks. [Robin Schoonover]
+
+- Update TOC Interface for Patch 6.1 [Robin Schoonover]
+
+- Fix something involving uids. [Robin Schoonover]
+
+- Update TOC for 5.3 client [Robin Schoonover]
+
+- Update TOC for 5.2 client. [Robin Schoonover]
+
+- Add support for pet ability ids. [Robin Schoonover]
+
+- Check for script handler before hooking it. [Robin Schoonover]
+
+- Only hook tooltips where the normal tooltip methods exist. [Robin
+  Schoonover]
+
+- Refactor some code into common module and add IDs to pet card. [Robin
+  Schoonover]
+
+- Remove now unused TODO function. [Robin Schoonover]
+
+- Hm.  I dont know where this shows up. [Robin Schoonover]
+
+- LFG Rewards work for items, but not for currencies. [Robin Schoonover]
+
+- Handle condition where we don't have a unit on SetUnit [Robin
+  Schoonover]
+
+- Get nearly everything. [Robin Schoonover]
+
+- Clean up/fix some of the id types. [Robin Schoonover]
+
+- Import some basic code. [Robin Schoonover]
+

@@ -2,7 +2,7 @@ local wm = CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton
 
 wm:SetParent("UIParent") 
 wm:ClearAllPoints() 
-wm:SetPoint("CENTER", UIParent, "CENTER", 352, 72) 
+wm:SetPoint("CENTER", UIParent, "CENTER", 282, 35) 
 wm:SetSize(18, 18) 
 wm:Hide() 
 

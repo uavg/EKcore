@@ -1,11 +1,11 @@
 ﻿-- Config start
 local anchor = "TOPLEFT"
-local x, y = 485, -40
-local width, height = 150, 20
+local x, y = 135, -270
+local width, height = 120, 20
 local spacing = 3
 local icon_size = 20
 local font = GameFontHighlight:GetFont()
-local font_size = 14
+local font_size = 10
 local font_style = "OUTLINE"
 local backdrop_color = {0, 0, 0, 0.4}
 local border_color = {0, 0, 0, 1}
@@ -33,7 +33,7 @@ local spells = {
 	[15487]   = 45, --沉默
 	[183752]  = 15, --[DH]吞噬魔法
 	--法術封鎖
-	--[80483]   = 90, --[BE]奧流之術
+	[80483]   = 90, --[BE]奧流之術
 }
 
 local cfg = {}
@@ -261,8 +261,8 @@ addon:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 addon:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 
 SlashCmdList["INTCD"] = function(msg) 
-	StartTimer(UnitName('player'), 131772)
-	StartTimer(UnitName('player'), 131772)
+	StartTimer(UnitName('player'), 740)
+	StartTimer(UnitName('player'), 20484)
 	StartTimer(UnitName('player'), 131772)
 end
 SLASH_INTCD1 = "/intcd"

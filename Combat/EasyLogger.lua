@@ -1,8 +1,8 @@
 local f = CreateFrame("Frame")
 
 f:SetScript("OnEvent", function ()
-	local _, instanceType = IsInInstance()
-	if instanceType == "raid" then
+	local _, instanceType, difficulty = IsInInstance()
+	if instanceType == "raid" or difficulty == 8 then
 		if not LoggingCombat() then
 			LoggingCombat(true)
 			print("EasyLogger: |cff00FF00ON|r")

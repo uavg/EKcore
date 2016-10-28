@@ -1,7 +1,9 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="CharacterStats.lua"/>	
+	
 	<Script file="pmAlertFrame.lua"/>	
 	<Script file="HideTalkingHead.lua"/>
-	<!--Script file="bXP.lua"/-->	
+	
 	<Script file="Blizz_GuildUI_Status.lua"/>
 	<Script file="FastError.lua"/>	
 	<Script file="FriendColor.lua"/>
