@@ -1,6 +1,6 @@
 ﻿## Interface: 70100
 ## Title: |cff00ffffEK|rcore
-## Version: 7.0.alpha5
+## Version: 7.1.BETA1
 ## SavedVariablesPerCharacter: GMOTD
 
 #框體拖曳
